@@ -1,0 +1,108 @@
+
+ <div class="container">
+    <div class="heading"><h1> Employees Report</h1>
+        <p>Select employee hired date range:</p>
+    </div>
+    <form [formGroup]="dateForm" (ngSubmit)="onSubmit()" novalidate style="color: white;">
+        <div class="">
+            <div class="col">
+                <label>Start-Date: <i class="far fa-calendar"></i></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend"></div>
+                  <input
+                    type="date"
+                    formControlName="startdate"
+                    placeholder="From Date"
+                    class="form-control"
+                    required
+                  />
+                </div>
+            </div>
+            <div class="col">
+                <label>End-Date: <i class="far fa-calendar"></i></label>
+                <div class="input-group ">
+                  <input
+                    type="date"
+                    formControlName="enddate"
+                    placeholder="To Date"
+                    class="form-control"
+                    required
+                  />
+                </div>
+            </div>
+       
+        
+          <br>
+    
+         
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Generate Report
+          </button>
+          <button type="button" class="btn btn-primary" style="float: right;" (click)="download()">
+            <i class="fa fa-file-pdf-o mr-1"></i>
+            Download PDF 
+          </button>
+      </form>
+ 
+    <br />
+    <br />
+    <hr class="double" />   
+    <br />
+   
+    <div class="shapeContainer mt-5" id="pdf" style="color: black;">
+    <div class="col-sm-6 mt-5"></div>  
+    <div class="col-sm-6"><br>
+      <div class="logo mt-5" style="font-size: 90px;">Crayon Kids</div><br><br>
+      <hr class="cover" /> 
+      <h1 class="white">Student Numbers Report</h1>
+      <h3 class="cover white">Prepared by: LoggedIn Person</h3>
+      <h3 class="cover white" style="margin-bottom: 0em;">Date Prepared: {{today}}</h3>
+    </div>
+<div class="container" >
+  
+      
+
+    <hr />
+    <br />
+    <br>
+    <div  class="container mt-5" >
+        <hr>
+        <div *ngIf="chart" class="reportChart" style="width: 95%;">
+          <canvas id="canvas" style="height: 30%">{{ chart }}</canvas>
+        </div>
+        <div class="mt-5" *ngIf="employees">
+            <div *ngFor="let item of employees" class="mt-5"><br><br><br>
+              <table class="table" style="table-layout: fixed mt-5" id="table">
+                <caption style="text-align: center; color: black;">
+                  <strong> Province: </strong>
+                  {{
+                    item.PName 
+                  }} ({{ item.Total}})
+                  
+                </caption>
+                <thead>
+                  <tr class="table-primary" >
+                    <th>Employee Name</th>
+                    <th>Date Hired</th>
+                    <th>City</th>
+                  </tr>
+                </thead>
+                <tr *ngFor="let rate of item.Employee" style="color: black;" id="white">
+                  <td>{{ rate.Full_Name }}</td>
+                  <td>{{ rate.Hire_Date | date }}</td>
+                  <td>{{ rate.City }}</td>
+                </tr>
+              </table>
+            </div>
+        </div>
+      </div>
+  
+   
+  
+    <div class="row">
+      <br />
+    </div>
+
+  </div>
+    </div>

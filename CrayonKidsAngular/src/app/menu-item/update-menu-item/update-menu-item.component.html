@@ -1,0 +1,58 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">person</span> Update menu_item
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form [formGroup]="menu_itemForm" class="form-inline" (ngSubmit)="updateMenu_Item()">
+    <br><br>
+    
+    < class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="name">Menu_Item_Description:</label>
+          <br>
+          <input type="text" name="Menu_Item_Description" [(ngModel)]="menu_itemService.menu_ItemData.Menu_Item_Description" class="form-control" formControlName="Menu_Item_Description" value="{{menu_itemDetails.Menu_Item_Description}}"> <br>
+          <small *ngIf="menu_itemForm.get('Menu_Item_Description').invalid && menu_itemForm.get('Menu_Item_Description').touched" class="text-danger">Required (max 50 characters, no special characters)</small>
+  
+        </mat-form-field> 
+       </div>
+  
+       <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="name">Menu_Items_Purchased:</label>
+          <br>
+          <input type="text" name="Menu_Items_Purchased" [(ngModel)]="menu_itemService.menu_ItemData.Menu_Items_Purchased" class="form-control" formControlName="Menu_Item_Menu_Item_Menu_Items_Purchased" value="{{menu_itemDetails.Menu_Items_Purchased}}"> <br>
+          <small *ngIf="menu_itemForm.get('Menu_Item_Menu_Items_Purchased').invalid && menu_itemForm.get('Menu_Item_Menu_Items_Purchased').touched" class="text-danger">Required (max 50 characters, no special characters)</small>
+  
+        </mat-form-field> 
+       </div>
+  
+
+       <div class="col-lg-6">
+        <mat-form-field>  
+        <label for="menu_item_Purchase_Date">Menu_Item_Purchase_Date:</label>
+        <br>
+        <input type="date" name="Menu_Item_Purchase_Date" [(ngModel)]="menu_itemService.menu_ItemData.Menu_Item_Purchase_Date" class="form-control" formControlName="menu_item_Purchase_Date" value="{{menu_itemDetails.Menu_Item_Purchase_Date}}"> <br>
+        <small *ngIf="menu_itemForm.get('menu_item_Purchase_Date').invalid && menu_itemForm.get('menu_item_Purchase_Date').touched" class="text-danger">Menu_Item_Purchase_Date is required</small>
+      </mat-form-field> 
+    </div>
+
+  <br>
+    <div class="addButton">
+      <button type="submit" [disabled]="!menu_itemForm.valid" class="btn btn-success" >update menu item</button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+
+  
+  
+  
+  

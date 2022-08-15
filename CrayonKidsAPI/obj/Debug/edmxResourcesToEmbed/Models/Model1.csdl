@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CrayonKidsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__EFMigrationsHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Allergy">
+    <Key>
+      <PropertyRef Name="Allergy_ID" />
+    </Key>
+    <Property Name="Allergy_ID" Type="Int32" Nullable="false" />
+    <Property Name="Allergy_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Allergy_Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Application_ID" />
+    </Key>
+    <Property Name="Application_ID" Type="Int32" Nullable="false" />
+    <Property Name="Parent_Guardian_ID" Type="Int32" />
+    <Property Name="Student_ID" Type="Int32" />
+    <Property Name="Application_Status_ID" Type="Int32" />
+    <Property Name="Application_Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Application_Status" Relationship="Self.FK__Applicati__Appli__282DF8C2" FromRole="Application" ToRole="Application_Status" />
+    <NavigationProperty Name="Parent_Guardian" Relationship="Self.FK__Applicati__Paren__2645B050" FromRole="Application" ToRole="Parent_Guardian" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__Applicati__Stude__2739D489" FromRole="Application" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Application_Status">
+    <Key>
+      <PropertyRef Name="Application_Status_ID" />
+    </Key>
+    <Property Name="Application_Status_ID" Type="Int32" Nullable="false" />
+    <Property Name="Application_ID" Type="Int32" />
+    <Property Name="Accepted" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Rejected" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Pending" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Appli__282DF8C2" FromRole="Application_Status" ToRole="Application" />
+  </EntityType>
+  <EntityType Name="Appointment_Booking">
+    <Key>
+      <PropertyRef Name="Appointment_Booking_ID" />
+    </Key>
+    <Property Name="Appointment_Booking_ID" Type="Int32" Nullable="false" />
+    <Property Name="Appointment_Booking_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Booking_Status_ID" Type="Int32" />
+    <Property Name="Appointment_Booking_Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Booking_Status" Relationship="Self.FK__Appointme__Booki__0F624AF8" FromRole="Appointment_Booking" ToRole="Booking_Status" />
+  </EntityType>
+  <EntityType Name="Assessment">
+    <Key>
+      <PropertyRef Name="Assessment_ID" />
+    </Key>
+    <Property Name="Assessment_ID" Type="Int32" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="Int32" />
+    <Property Name="Assessment_Details" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ReportCard_Template" Relationship="Self.FK__Assessmen__Repor__68487DD7" FromRole="Assessment" ToRole="ReportCard_Template" />
+  </EntityType>
+  <EntityType Name="Booking_Status">
+    <Key>
+      <PropertyRef Name="Booking_Status_ID" />
+    </Key>
+    <Property Name="Booking_Status_ID" Type="Int32" Nullable="false" />
+    <Property Name="Accepted" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Rejected" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Pending" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Appointment_Booking" Relationship="Self.FK__Appointme__Booki__0F624AF8" FromRole="Booking_Status" ToRole="Appointment_Booking" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="City_ID" />
+    </Key>
+    <Property Name="City_ID" Type="Int32" Nullable="false" />
+    <Property Name="City_Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Province_ID" Type="Int32" />
+    <NavigationProperty Name="Province" Relationship="Self.FK__City__Province_I__2CF2ADDF" FromRole="City" ToRole="Province" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Class_ID" />
+    </Key>
+    <Property Name="Class_ID" Type="Int32" Nullable="false" />
+    <Property Name="Class_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Class_Capacity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Class_Class_Type">
+    <Key>
+      <PropertyRef Name="Class_ID" />
+      <PropertyRef Name="Class_Type_ID" />
+    </Key>
+    <Property Name="Class_ID" Type="Int32" Nullable="false" />
+    <Property Name="Class_Type_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Class_Type">
+    <Key>
+      <PropertyRef Name="Class_Type_ID" />
+    </Key>
+    <Property Name="Class_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grade" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Class_Type_Employee">
+    <Key>
+      <PropertyRef Name="Class_Type_ID" />
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Class_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="Complaint_ID" />
+    </Key>
+    <Property Name="Complaint_ID" Type="Int32" Nullable="false" />
+    <Property Name="Complaint_details" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DateTable">
+    <Key>
+      <PropertyRef Name="Date_ID" />
+    </Key>
+    <Property Name="Date_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date_details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="DateTime" Precision="0" />
+    <Property Name="Month" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Emergency">
+    <Key>
+      <PropertyRef Name="Emergency_ID" />
+    </Key>
+    <Property Name="Emergency_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emergency_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Emergency_Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Birth_Date" Type="DateTime" Precision="0" />
+    <Property Name="Hire_Date" Type="DateTime" Precision="0" />
+    <Property Name="Contact_No" Type="Int32" Nullable="false" />
+    <Property Name="Email_Address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Street_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Postal_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Supplier_Order" Relationship="Self.FK__Supplier___Emplo__208CD6FA" FromRole="Employee" ToRole="Supplier_Order" />
+  </EntityType>
+  <EntityType Name="Employee_Type">
+    <Key>
+      <PropertyRef Name="Employee_Type_ID" />
+    </Key>
+    <Property Name="Employee_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gardener" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Administrator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Principal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employment_Status">
+    <Key>
+      <PropertyRef Name="Employment_Status_ID" />
+    </Key>
+    <Property Name="Employment_Status_ID" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Inactive" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Equipment_ID" />
+    </Key>
+    <Property Name="Equipment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Equipment_Item_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Equipment_Purchase_Date" Type="DateTime" Precision="0" />
+    <Property Name="Equipment_Type_ID" Type="Int32" />
+    <NavigationProperty Name="Equipment_Type" Relationship="Self.FK__Equipment__Equip__1AD3FDA4" FromRole="Equipment" ToRole="Equipment_Type" />
+  </EntityType>
+  <EntityType Name="Equipment_Type">
+    <Key>
+      <PropertyRef Name="Equipment_Type_ID" />
+    </Key>
+    <Property Name="Equipment_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_Type_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Equipments" Relationship="Self.FK__Equipment__Equip__1AD3FDA4" FromRole="Equipment_Type" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="Homework">
+    <Key>
+      <PropertyRef Name="Homework_ID" />
+    </Key>
+    <Property Name="Homework_ID" Type="Int32" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="Int32" />
+    <Property Name="Homework_Details" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ReportCard_Template" Relationship="Self.FK__Homework__Report__6B24EA82" FromRole="Homework" ToRole="ReportCard_Template" />
+  </EntityType>
+  <EntityType Name="Marking_Scale">
+    <Key>
+      <PropertyRef Name="Marking_Scale_ID" />
+    </Key>
+    <Property Name="Marking_Scale_ID" Type="Int32" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="Int32" />
+    <Property Name="Marking_Scale_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ReportCard_Template" Relationship="Self.FK__Marking_S__Repor__6E01572D" FromRole="Marking_Scale" ToRole="ReportCard_Template" />
+    <NavigationProperty Name="Progress_Category" Relationship="Self.FK__Progress___Marki__70DDC3D8" FromRole="Marking_Scale" ToRole="Progress_Category" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Menu_ID" />
+    </Key>
+    <Property Name="Menu_ID" Type="Int32" Nullable="false" />
+    <Property Name="MenuDescription" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Menu_Item">
+    <Key>
+      <PropertyRef Name="Menu_Item_ID" />
+    </Key>
+    <Property Name="Menu_Item_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Item_Description" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Menu_Items_Purchased" Type="Int32" />
+    <Property Name="Menu_Item_Purchase_Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Menu_Item_Menu">
+    <Key>
+      <PropertyRef Name="Menu_ID" />
+      <PropertyRef Name="Menu_Item_ID" />
+    </Key>
+    <Property Name="Menu_ID" Type="Int32" Nullable="false" />
+    <Property Name="Menu_Item_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order_Line">
+    <Key>
+      <PropertyRef Name="Supplier_Order_ID" />
+      <PropertyRef Name="Order_Type_ID" />
+      <PropertyRef Name="Stationery_ID" />
+      <PropertyRef Name="Cleaning_Material_Item_ID" />
+      <PropertyRef Name="Equipment_ID" />
+    </Key>
+    <Property Name="Supplier_Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="Order_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Stationery_ID" Type="Int32" Nullable="false" />
+    <Property Name="Cleaning_Material_Item_ID" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_ID" Type="Int32" Nullable="false" />
+    <Property Name="Order_Line_Item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Parent_Guardian">
+    <Key>
+      <PropertyRef Name="Parent_Guardian_ID" />
+    </Key>
+    <Property Name="Parent_Guardian_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parent_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Parent_Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Parent_Contact_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Parent_Email_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Paren__2645B050" FromRole="Parent_Guardian" ToRole="Application" />
+    <NavigationProperty Name="Parent_Feedback" Relationship="Self.FK__Parent_Fe__Paren__403A8C7D" FromRole="Parent_Guardian" ToRole="Parent_Feedback" />
+    <NavigationProperty Name="School_Fees_Status" Relationship="Self.FK__School_Fe__Paren__123EB7A3" FromRole="Parent_Guardian" ToRole="School_Fees_Status" />
+    <NavigationProperty Name="Students" Relationship="Self.FK__Student__Parent___4316F928" FromRole="Parent_Guardian" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Parent_Guardian_Menu_Item">
+    <Key>
+      <PropertyRef Name="Parent_Guardian_ID" />
+      <PropertyRef Name="Menu_Item_ID" />
+    </Key>
+    <Property Name="Parent_Guardian_ID" Type="Int32" Nullable="false" />
+    <Property Name="Menu_Item_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Progress_Category">
+    <Key>
+      <PropertyRef Name="Progress_Category_ID" />
+    </Key>
+    <Property Name="Progress_Category_ID" Type="Int32" Nullable="false" />
+    <Property Name="Marking_Scale_ID" Type="Int32" />
+    <Property Name="Progress_Category_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Marking_Scale" Relationship="Self.FK__Progress___Marki__70DDC3D8" FromRole="Progress_Category" ToRole="Marking_Scale" />
+    <NavigationProperty Name="Subcategories" Relationship="Self.FK__Subcatego__Progr__73BA3083" FromRole="Progress_Category" ToRole="Subcategory" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Province_ID" />
+    </Key>
+    <Property Name="Province_ID" Type="Int32" Nullable="false" />
+    <Property Name="Province_Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK__City__Province_I__2CF2ADDF" FromRole="Province" ToRole="City" />
+  </EntityType>
+  <EntityType Name="ReportCard">
+    <Key>
+      <PropertyRef Name="Report_Card_ID" />
+    </Key>
+    <Property Name="Report_Card_ID" Type="Int32" Nullable="false" />
+    <Property Name="Report_Card_Details" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Student_ID" Type="Int32" />
+    <NavigationProperty Name="ReportCard_Template" Relationship="Self.FK__ReportCar__Repor__628FA481" FromRole="ReportCard" ToRole="ReportCard_Template" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__ReportCar__Stude__5AEE82B9" FromRole="ReportCard" ToRole="Student" />
+    <NavigationProperty Name="School_Term" Relationship="Self.FK__School_Te__Repor__5FB337D6" FromRole="ReportCard" ToRole="School_Term" />
+  </EntityType>
+  <EntityType Name="ReportCard_Template">
+    <Key>
+      <PropertyRef Name="Report_Card_Template_ID" />
+    </Key>
+    <Property Name="Report_Card_Template_ID" Type="Int32" Nullable="false" />
+    <Property Name="Report_Card_ID" Type="Int32" />
+    <Property Name="Report_Card_Grade" Type="Int32" />
+    <NavigationProperty Name="Assessments" Relationship="Self.FK__Assessmen__Repor__68487DD7" FromRole="ReportCard_Template" ToRole="Assessment" />
+    <NavigationProperty Name="Homework" Relationship="Self.FK__Homework__Report__6B24EA82" FromRole="ReportCard_Template" ToRole="Homework" />
+    <NavigationProperty Name="Marking_Scale" Relationship="Self.FK__Marking_S__Repor__6E01572D" FromRole="ReportCard_Template" ToRole="Marking_Scale" />
+    <NavigationProperty Name="ReportCard" Relationship="Self.FK__ReportCar__Repor__628FA481" FromRole="ReportCard_Template" ToRole="ReportCard" />
+    <NavigationProperty Name="Tests" Relationship="Self.FK__Test__Report_Car__656C112C" FromRole="ReportCard_Template" ToRole="Test" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="Schedule_ID" />
+    </Key>
+    <Property Name="Schedule_ID" Type="Int32" Nullable="false" />
+    <Property Name="School_ID" Type="Int32" />
+    <Property Name="Schedule_details" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Event_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="School" Relationship="Self.FK__Schedule__School__5812160E" FromRole="Schedule" ToRole="School" />
+    <NavigationProperty Name="School_Term" Relationship="Self.FK__School_Te__Sched__5DCAEF64" FromRole="Schedule" ToRole="School_Term" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="School_ID" />
+    </Key>
+    <Property Name="School_ID" Type="Int32" Nullable="false" />
+    <Property Name="School_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="School_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="School_Info_Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Schedules" Relationship="Self.FK__Schedule__School__5812160E" FromRole="School" ToRole="Schedule" />
+    <NavigationProperty Name="Supplier_Order" Relationship="Self.FK__Supplier___Schoo__1F98B2C1" FromRole="School" ToRole="Supplier_Order" />
+  </EntityType>
+  <EntityType Name="School_Fees_Status">
+    <Key>
+      <PropertyRef Name="School_Fees_Status_ID" />
+    </Key>
+    <Property Name="School_Fees_Status_ID" Type="Int32" Nullable="false" />
+    <Property Name="School_Fees_Status_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Parent_Guardian_ID" Type="Int32" />
+    <NavigationProperty Name="Parent_Guardian" Relationship="Self.FK__School_Fe__Paren__123EB7A3" FromRole="School_Fees_Status" ToRole="Parent_Guardian" />
+  </EntityType>
+  <EntityType Name="School_Term">
+    <Key>
+      <PropertyRef Name="School_Term_ID" />
+    </Key>
+    <Property Name="School_Term_ID" Type="Int32" Nullable="false" />
+    <Property Name="Schedule_ID" Type="Int32" />
+    <Property Name="Student_ID" Type="Int32" />
+    <Property Name="Report_Card_ID" Type="Int32" />
+    <Property Name="Term_details" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ReportCard" Relationship="Self.FK__School_Te__Repor__5FB337D6" FromRole="School_Term" ToRole="ReportCard" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK__School_Te__Sched__5DCAEF64" FromRole="School_Term" ToRole="Schedule" />
+    <NavigationProperty Name="Student" Relationship="Self.FK__School_Te__Stude__5EBF139D" FromRole="School_Term" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parent_Guardian_ID" Type="Int32" />
+    <Property Name="Student_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Student_Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Student_Grade" Type="Int32" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Stude__2739D489" FromRole="Student" ToRole="Application" />
+    <NavigationProperty Name="Parent_Guardian" Relationship="Self.FK__Student__Parent___4316F928" FromRole="Student" ToRole="Parent_Guardian" />
+    <NavigationProperty Name="ReportCards" Relationship="Self.FK__ReportCar__Stude__5AEE82B9" FromRole="Student" ToRole="ReportCard" />
+    <NavigationProperty Name="School_Term" Relationship="Self.FK__School_Te__Stude__5EBF139D" FromRole="Student" ToRole="School_Term" />
+  </EntityType>
+  <EntityType Name="Student_Allergy">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+      <PropertyRef Name="Allergy_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="Int32" Nullable="false" />
+    <Property Name="Allergy_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student_Class">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+      <PropertyRef Name="Class_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="Int32" Nullable="false" />
+    <Property Name="Class_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student_Emergency">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+      <PropertyRef Name="Emergency_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emergency_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subcategory">
+    <Key>
+      <PropertyRef Name="Subcategory_ID" />
+    </Key>
+    <Property Name="Subcategory_ID" Type="Int32" Nullable="false" />
+    <Property Name="Progress_Category_ID" Type="Int32" />
+    <Property Name="Subcategory_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Progress_Category" Relationship="Self.FK__Subcatego__Progr__73BA3083" FromRole="Subcategory" ToRole="Progress_Category" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_ID" />
+    </Key>
+    <Property Name="Supplier_ID" Type="Int32" Nullable="false" />
+    <Property Name="Supplier_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Email_Address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Contact_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Supplier_Address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Supplier_Order" Relationship="Self.FK__Supplier___Suppl__2180FB33" FromRole="Supplier" ToRole="Supplier_Order" />
+  </EntityType>
+  <EntityType Name="Supplier_Order">
+    <Key>
+      <PropertyRef Name="Supplier_Order_ID" />
+    </Key>
+    <Property Name="Supplier_Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="School_ID" Type="Int32" />
+    <Property Name="Employee_ID" Type="Int32" />
+    <Property Name="Supplier_ID" Type="Int32" />
+    <Property Name="Supplier_Order_Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Supplier___Emplo__208CD6FA" FromRole="Supplier_Order" ToRole="Employee" />
+    <NavigationProperty Name="School" Relationship="Self.FK__Supplier___Schoo__1F98B2C1" FromRole="Supplier_Order" ToRole="School" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK__Supplier___Suppl__2180FB33" FromRole="Supplier_Order" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Test_ID" />
+    </Key>
+    <Property Name="Test_ID" Type="Int32" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="Int32" />
+    <Property Name="Test_Details" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ReportCard_Template" Relationship="Self.FK__Test__Report_Car__656C112C" FromRole="Test" ToRole="ReportCard_Template" />
+  </EntityType>
+  <EntityType Name="Timeslot">
+    <Key>
+      <PropertyRef Name="Timeslot_ID" />
+    </Key>
+    <Property Name="Timeslot_ID" Type="Int32" Nullable="false" />
+    <Property Name="Timeslot_details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Timeslot_Schedule_Date">
+    <Key>
+      <PropertyRef Name="TimeSlot_ID" />
+      <PropertyRef Name="Schedule_ID" />
+      <PropertyRef Name="Date_ID" />
+    </Key>
+    <Property Name="TimeSlot_ID" Type="Int32" Nullable="false" />
+    <Property Name="Schedule_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="Title_ID" />
+    </Key>
+    <Property Name="Title_ID" Type="Int32" Nullable="false" />
+    <Property Name="Mr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Mrs" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Ms" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Dr" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User_Tbl">
+    <Key>
+      <PropertyRef Name="User_Tbl_ID" />
+    </Key>
+    <Property Name="User_Tbl_ID" Type="Int32" Nullable="false" />
+    <Property Name="User_Type_ID" Type="Int32" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User_Type" Relationship="Self.FK__User_Tbl__User_T__4F7CD00D" FromRole="User_Tbl" ToRole="User_Type" />
+  </EntityType>
+  <EntityType Name="User_Type">
+    <Key>
+      <PropertyRef Name="User_Type_ID" />
+    </Key>
+    <Property Name="User_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="User_Type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User_Tbl" Relationship="Self.FK__User_Tbl__User_T__4F7CD00D" FromRole="User_Type" ToRole="User_Tbl" />
+  </EntityType>
+  <EntityType Name="Zip_Code">
+    <Key>
+      <PropertyRef Name="Zip_Code_ID" />
+    </Key>
+    <Property Name="Zip_Code_ID" Type="Int32" Nullable="false" />
+    <Property Name="Zip_Code_Details" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Parent_Feedback">
+    <Key>
+      <PropertyRef Name="Parent_Feedback_ID" />
+    </Key>
+    <Property Name="Parent_Feedback_ID" Type="Int32" Nullable="false" />
+    <Property Name="Parent_Guardian_ID" Type="Int32" />
+    <Property Name="Parent_Feedback_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Parent_Guardian" Relationship="Self.FK__Parent_Fe__Paren__403A8C7D" FromRole="Parent_Feedback" ToRole="Parent_Guardian" />
+  </EntityType>
+  <Association Name="FK__Applicati__Appli__282DF8C2">
+    <End Role="Application_Status" Type="Self.Application_Status" Multiplicity="0..1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application_Status">
+        <PropertyRef Name="Application_Status_ID" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="Application_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Applicati__Paren__2645B050">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Applicati__Stude__2739D489">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Appointme__Booki__0F624AF8">
+    <End Role="Booking_Status" Type="Self.Booking_Status" Multiplicity="0..1" />
+    <End Role="Appointment_Booking" Type="Self.Appointment_Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking_Status">
+        <PropertyRef Name="Booking_Status_ID" />
+      </Principal>
+      <Dependent Role="Appointment_Booking">
+        <PropertyRef Name="Booking_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Assessmen__Repor__68487DD7">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__Province_I__2CF2ADDF">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Province_ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Province_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier___Emplo__208CD6FA">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Supplier_Order">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__1AD3FDA4">
+    <End Role="Equipment_Type" Type="Self.Equipment_Type" Multiplicity="0..1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment_Type">
+        <PropertyRef Name="Equipment_Type_ID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="Equipment_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Homework__Report__6B24EA82">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Homework">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Marking_S__Repor__6E01572D">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Marking_Scale" Type="Self.Marking_Scale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Marking_Scale">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Progress___Marki__70DDC3D8">
+    <End Role="Marking_Scale" Type="Self.Marking_Scale" Multiplicity="0..1" />
+    <End Role="Progress_Category" Type="Self.Progress_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marking_Scale">
+        <PropertyRef Name="Marking_Scale_ID" />
+      </Principal>
+      <Dependent Role="Progress_Category">
+        <PropertyRef Name="Marking_Scale_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parent_Fe__Paren__403A8C7D">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="Parent_Feedback" Type="Self.Parent_Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="Parent_Feedback">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Fe__Paren__123EB7A3">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="School_Fees_Status" Type="Self.School_Fees_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="School_Fees_Status">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__Parent___4316F928">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Subcatego__Progr__73BA3083">
+    <End Role="Progress_Category" Type="Self.Progress_Category" Multiplicity="0..1" />
+    <End Role="Subcategory" Type="Self.Subcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Progress_Category">
+        <PropertyRef Name="Progress_Category_ID" />
+      </Principal>
+      <Dependent Role="Subcategory">
+        <PropertyRef Name="Progress_Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReportCar__Repor__628FA481">
+    <End Role="ReportCard" Type="Self.ReportCard" Multiplicity="0..1" />
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard">
+        <PropertyRef Name="Report_Card_ID" />
+      </Principal>
+      <Dependent Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReportCar__Stude__5AEE82B9">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="ReportCard" Type="Self.ReportCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="ReportCard">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Te__Repor__5FB337D6">
+    <End Role="ReportCard" Type="Self.ReportCard" Multiplicity="0..1" />
+    <End Role="School_Term" Type="Self.School_Term" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard">
+        <PropertyRef Name="Report_Card_ID" />
+      </Principal>
+      <Dependent Role="School_Term">
+        <PropertyRef Name="Report_Card_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Test__Report_Car__656C112C">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Schedule__School__5812160E">
+    <End Role="School" Type="Self.School" Multiplicity="0..1" />
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="School_ID" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="School_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Te__Sched__5DCAEF64">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="School_Term" Type="Self.School_Term" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="Schedule_ID" />
+      </Principal>
+      <Dependent Role="School_Term">
+        <PropertyRef Name="Schedule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier___Schoo__1F98B2C1">
+    <End Role="School" Type="Self.School" Multiplicity="0..1" />
+    <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="School_ID" />
+      </Principal>
+      <Dependent Role="Supplier_Order">
+        <PropertyRef Name="School_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Te__Stude__5EBF139D">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="School_Term" Type="Self.School_Term" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="School_Term">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier___Suppl__2180FB33">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Supplier_Order">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Tbl__User_T__4F7CD00D">
+    <End Role="User_Type" Type="Self.User_Type" Multiplicity="0..1" />
+    <End Role="User_Tbl" Type="Self.User_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type">
+        <PropertyRef Name="User_Type_ID" />
+      </Principal>
+      <Dependent Role="User_Tbl">
+        <PropertyRef Name="User_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CrayonKidsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+    <EntitySet Name="Allergies" EntityType="Self.Allergy" />
+    <EntitySet Name="Applications" EntityType="Self.Application" />
+    <EntitySet Name="Application_Status" EntityType="Self.Application_Status" />
+    <EntitySet Name="Appointment_Booking" EntityType="Self.Appointment_Booking" />
+    <EntitySet Name="Assessments" EntityType="Self.Assessment" />
+    <EntitySet Name="Booking_Status" EntityType="Self.Booking_Status" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Classes" EntityType="Self.Class" />
+    <EntitySet Name="Class_Class_Type" EntityType="Self.Class_Class_Type" />
+    <EntitySet Name="Class_Type" EntityType="Self.Class_Type" />
+    <EntitySet Name="Class_Type_Employee" EntityType="Self.Class_Type_Employee" />
+    <EntitySet Name="Complaints" EntityType="Self.Complaint" />
+    <EntitySet Name="DateTables" EntityType="Self.DateTable" />
+    <EntitySet Name="Emergencies" EntityType="Self.Emergency" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" />
+    <EntitySet Name="Employment_Status" EntityType="Self.Employment_Status" />
+    <EntitySet Name="Equipments" EntityType="Self.Equipment" />
+    <EntitySet Name="Equipment_Type" EntityType="Self.Equipment_Type" />
+    <EntitySet Name="Homework" EntityType="Self.Homework" />
+    <EntitySet Name="Marking_Scale" EntityType="Self.Marking_Scale" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <EntitySet Name="Menu_Item" EntityType="Self.Menu_Item" />
+    <EntitySet Name="Menu_Item_Menu" EntityType="Self.Menu_Item_Menu" />
+    <EntitySet Name="Order_Line" EntityType="Self.Order_Line" />
+    <EntitySet Name="Parent_Guardian" EntityType="Self.Parent_Guardian" />
+    <EntitySet Name="Parent_Guardian_Menu_Item" EntityType="Self.Parent_Guardian_Menu_Item" />
+    <EntitySet Name="Progress_Category" EntityType="Self.Progress_Category" />
+    <EntitySet Name="Provinces" EntityType="Self.Province" />
+    <EntitySet Name="ReportCards" EntityType="Self.ReportCard" />
+    <EntitySet Name="ReportCard_Template" EntityType="Self.ReportCard_Template" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+    <EntitySet Name="Schools" EntityType="Self.School" />
+    <EntitySet Name="School_Fees_Status" EntityType="Self.School_Fees_Status" />
+    <EntitySet Name="School_Term" EntityType="Self.School_Term" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Student_Allergy" EntityType="Self.Student_Allergy" />
+    <EntitySet Name="Student_Class" EntityType="Self.Student_Class" />
+    <EntitySet Name="Student_Emergency" EntityType="Self.Student_Emergency" />
+    <EntitySet Name="Subcategories" EntityType="Self.Subcategory" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="Supplier_Order" EntityType="Self.Supplier_Order" />
+    <EntitySet Name="Tests" EntityType="Self.Test" />
+    <EntitySet Name="Timeslots" EntityType="Self.Timeslot" />
+    <EntitySet Name="Timeslot_Schedule_Date" EntityType="Self.Timeslot_Schedule_Date" />
+    <EntitySet Name="Titles" EntityType="Self.Title" />
+    <EntitySet Name="User_Tbl" EntityType="Self.User_Tbl" />
+    <EntitySet Name="User_Type" EntityType="Self.User_Type" />
+    <EntitySet Name="Zip_Code" EntityType="Self.Zip_Code" />
+    <EntitySet Name="Parent_Feedback" EntityType="Self.Parent_Feedback" />
+    <AssociationSet Name="FK__Applicati__Appli__282DF8C2" Association="Self.FK__Applicati__Appli__282DF8C2">
+      <End Role="Application_Status" EntitySet="Application_Status" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Applicati__Paren__2645B050" Association="Self.FK__Applicati__Paren__2645B050">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Applicati__Stude__2739D489" Association="Self.FK__Applicati__Stude__2739D489">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Appointme__Booki__0F624AF8" Association="Self.FK__Appointme__Booki__0F624AF8">
+      <End Role="Booking_Status" EntitySet="Booking_Status" />
+      <End Role="Appointment_Booking" EntitySet="Appointment_Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Assessmen__Repor__68487DD7" Association="Self.FK__Assessmen__Repor__68487DD7">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__Province_I__2CF2ADDF" Association="Self.FK__City__Province_I__2CF2ADDF">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier___Emplo__208CD6FA" Association="Self.FK__Supplier___Emplo__208CD6FA">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__1AD3FDA4" Association="Self.FK__Equipment__Equip__1AD3FDA4">
+      <End Role="Equipment_Type" EntitySet="Equipment_Type" />
+      <End Role="Equipment" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Homework__Report__6B24EA82" Association="Self.FK__Homework__Report__6B24EA82">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Homework" EntitySet="Homework" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Marking_S__Repor__6E01572D" Association="Self.FK__Marking_S__Repor__6E01572D">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Marking_Scale" EntitySet="Marking_Scale" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Progress___Marki__70DDC3D8" Association="Self.FK__Progress___Marki__70DDC3D8">
+      <End Role="Marking_Scale" EntitySet="Marking_Scale" />
+      <End Role="Progress_Category" EntitySet="Progress_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parent_Fe__Paren__403A8C7D" Association="Self.FK__Parent_Fe__Paren__403A8C7D">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="Parent_Feedback" EntitySet="Parent_Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Fe__Paren__123EB7A3" Association="Self.FK__School_Fe__Paren__123EB7A3">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="School_Fees_Status" EntitySet="School_Fees_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__Parent___4316F928" Association="Self.FK__Student__Parent___4316F928">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Subcatego__Progr__73BA3083" Association="Self.FK__Subcatego__Progr__73BA3083">
+      <End Role="Progress_Category" EntitySet="Progress_Category" />
+      <End Role="Subcategory" EntitySet="Subcategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReportCar__Repor__628FA481" Association="Self.FK__ReportCar__Repor__628FA481">
+      <End Role="ReportCard" EntitySet="ReportCards" />
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReportCar__Stude__5AEE82B9" Association="Self.FK__ReportCar__Stude__5AEE82B9">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="ReportCard" EntitySet="ReportCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Te__Repor__5FB337D6" Association="Self.FK__School_Te__Repor__5FB337D6">
+      <End Role="ReportCard" EntitySet="ReportCards" />
+      <End Role="School_Term" EntitySet="School_Term" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Test__Report_Car__656C112C" Association="Self.FK__Test__Report_Car__656C112C">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Test" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Schedule__School__5812160E" Association="Self.FK__Schedule__School__5812160E">
+      <End Role="School" EntitySet="Schools" />
+      <End Role="Schedule" EntitySet="Schedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Te__Sched__5DCAEF64" Association="Self.FK__School_Te__Sched__5DCAEF64">
+      <End Role="Schedule" EntitySet="Schedules" />
+      <End Role="School_Term" EntitySet="School_Term" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier___Schoo__1F98B2C1" Association="Self.FK__Supplier___Schoo__1F98B2C1">
+      <End Role="School" EntitySet="Schools" />
+      <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Te__Stude__5EBF139D" Association="Self.FK__School_Te__Stude__5EBF139D">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="School_Term" EntitySet="School_Term" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier___Suppl__2180FB33" Association="Self.FK__Supplier___Suppl__2180FB33">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Tbl__User_T__4F7CD00D" Association="Self.FK__User_Tbl__User_T__4F7CD00D">
+      <End Role="User_Type" EntitySet="User_Type" />
+      <End Role="User_Tbl" EntitySet="User_Tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

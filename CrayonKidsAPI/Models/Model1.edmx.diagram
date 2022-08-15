@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e7757db9ac8040ee9b86e328304f789e" Name="Diagram1">
+        <EntityTypeShape EntityType="CrayonKidsModel.C__EFMigrationsHistory" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Allergy" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Application" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Application_Status" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Appointment_Booking" Width="1.5" PointX="14" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Assessment" Width="1.5" PointX="9.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Booking_Status" Width="1.5" PointX="11.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.City" Width="1.5" PointX="13" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Class" Width="1.5" PointX="11.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Class_Class_Type" Width="1.5" PointX="13.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Class_Type" Width="1.5" PointX="13.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Class_Type_Employee" Width="1.5" PointX="15.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Complaint" Width="1.5" PointX="15.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.DateTable" Width="1.5" PointX="15.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Emergency" Width="1.5" PointX="15.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Employee" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Employee_Type" Width="1.5" PointX="16.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Employment_Status" Width="1.5" PointX="16.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Equipment" Width="1.5" PointX="13" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Equipment_Type" Width="1.5" PointX="10.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Homework" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Marking_Scale" Width="1.5" PointX="9.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Menu" Width="1.5" PointX="17.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Menu_Item" Width="1.5" PointX="17.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Menu_Item_Menu" Width="1.5" PointX="17.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Order_Line" Width="1.5" PointX="17.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Parent_Guardian" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Parent_Guardian_Menu_Item" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Progress_Category" Width="1.5" PointX="12" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Province" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.ReportCard" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.ReportCard_Template" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Schedule" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.School" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.School_Fees_Status" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.School_Term" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Student" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Student_Allergy" Width="1.5" PointX="2.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Student_Class" Width="1.5" PointX="18.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Student_Emergency" Width="1.5" PointX="18.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Subcategory" Width="1.5" PointX="14.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Supplier" Width="1.5" PointX="6" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Supplier_Order" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Test" Width="1.5" PointX="9.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Timeslot" Width="1.5" PointX="16.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Timeslot_Schedule_Date" Width="1.5" PointX="18.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Title" Width="1.5" PointX="19.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.User_Tbl" Width="1.5" PointX="11" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.User_Type" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Zip_Code" Width="1.5" PointX="19.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CrayonKidsModel.Parent_Feedback" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Applicati__Appli__282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Applicati__Paren__2645B050" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Applicati__Stude__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Appointme__Booki__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Assessmen__Repor__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__City__Province_I__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Supplier___Emplo__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Equipment__Equip__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Homework__Report__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Marking_S__Repor__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Progress___Marki__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Parent_Fe__Paren__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__School_Fe__Paren__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Student__Parent___4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Subcatego__Progr__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__ReportCar__Repor__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__ReportCar__Stude__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__School_Te__Repor__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Test__Report_Car__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Schedule__School__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__School_Te__Sched__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Supplier___Schoo__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__School_Te__Stude__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__Supplier___Suppl__2180FB33" ManuallyRouted="false" />
+        <AssociationConnector Association="CrayonKidsModel.FK__User_Tbl__User_T__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

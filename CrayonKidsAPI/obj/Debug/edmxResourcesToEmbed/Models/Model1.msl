@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CrayonKidsModelStoreContainer" CdmEntityContainer="CrayonKidsEntities">
+    <EntitySetMapping Name="C__EFMigrationsHistory">
+      <EntityTypeMapping TypeName="CrayonKidsModel.C__EFMigrationsHistory">
+        <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Allergies">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Allergy">
+        <MappingFragment StoreEntitySet="Allergy">
+          <ScalarProperty Name="Allergy_ID" ColumnName="Allergy_ID" />
+          <ScalarProperty Name="Allergy_Details" ColumnName="Allergy_Details" />
+          <ScalarProperty Name="Allergy_Date" ColumnName="Allergy_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="Application_ID" ColumnName="Application_ID" />
+          <ScalarProperty Name="Parent_Guardian_ID" ColumnName="Parent_Guardian_ID" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Application_Status_ID" ColumnName="Application_Status_ID" />
+          <ScalarProperty Name="Application_Date" ColumnName="Application_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Application_Status">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Application_Status">
+        <MappingFragment StoreEntitySet="Application_Status">
+          <ScalarProperty Name="Application_Status_ID" ColumnName="Application_Status_ID" />
+          <ScalarProperty Name="Application_ID" ColumnName="Application_ID" />
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+          <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+          <ScalarProperty Name="Pending" ColumnName="Pending" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appointment_Booking">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Appointment_Booking">
+        <MappingFragment StoreEntitySet="Appointment_Booking">
+          <ScalarProperty Name="Appointment_Booking_ID" ColumnName="Appointment_Booking_ID" />
+          <ScalarProperty Name="Appointment_Booking_Details" ColumnName="Appointment_Booking_Details" />
+          <ScalarProperty Name="Booking_Status_ID" ColumnName="Booking_Status_ID" />
+          <ScalarProperty Name="Appointment_Booking_Date" ColumnName="Appointment_Booking_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessments">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Assessment">
+        <MappingFragment StoreEntitySet="Assessment">
+          <ScalarProperty Name="Assessment_ID" ColumnName="Assessment_ID" />
+          <ScalarProperty Name="Report_Card_Template_ID" ColumnName="Report_Card_Template_ID" />
+          <ScalarProperty Name="Assessment_Details" ColumnName="Assessment_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Booking_Status">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Booking_Status">
+        <MappingFragment StoreEntitySet="Booking_Status">
+          <ScalarProperty Name="Booking_Status_ID" ColumnName="Booking_Status_ID" />
+          <ScalarProperty Name="Accepted" ColumnName="Accepted" />
+          <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+          <ScalarProperty Name="Pending" ColumnName="Pending" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="CrayonKidsModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="City_Details" ColumnName="City_Details" />
+          <ScalarProperty Name="Province_ID" ColumnName="Province_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="Class_Name" ColumnName="Class_Name" />
+          <ScalarProperty Name="Class_Capacity" ColumnName="Class_Capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class_Class_Type">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Class_Class_Type">
+        <MappingFragment StoreEntitySet="Class_Class_Type">
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="Class_Type_ID" ColumnName="Class_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class_Type">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Class_Type">
+        <MappingFragment StoreEntitySet="Class_Type">
+          <ScalarProperty Name="Class_Type_ID" ColumnName="Class_Type_ID" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class_Type_Employee">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Class_Type_Employee">
+        <MappingFragment StoreEntitySet="Class_Type_Employee">
+          <ScalarProperty Name="Class_Type_ID" ColumnName="Class_Type_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Complaint">
+        <MappingFragment StoreEntitySet="Complaint">
+          <ScalarProperty Name="Complaint_ID" ColumnName="Complaint_ID" />
+          <ScalarProperty Name="Complaint_details" ColumnName="Complaint_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DateTables">
+      <EntityTypeMapping TypeName="CrayonKidsModel.DateTable">
+        <MappingFragment StoreEntitySet="DateTable">
+          <ScalarProperty Name="Date_ID" ColumnName="Date_ID" />
+          <ScalarProperty Name="Date_details" ColumnName="Date_details" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emergencies">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Emergency">
+        <MappingFragment StoreEntitySet="Emergency">
+          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
+          <ScalarProperty Name="Emergency_Details" ColumnName="Emergency_Details" />
+          <ScalarProperty Name="Emergency_Date" ColumnName="Emergency_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+          <ScalarProperty Name="Hire_Date" ColumnName="Hire_Date" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="Street_Address" ColumnName="Street_Address" />
+          <ScalarProperty Name="Address_2" ColumnName="Address_2" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Type">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Employee_Type">
+        <MappingFragment StoreEntitySet="Employee_Type">
+          <ScalarProperty Name="Employee_Type_ID" ColumnName="Employee_Type_ID" />
+          <ScalarProperty Name="Teacher" ColumnName="Teacher" />
+          <ScalarProperty Name="Cook" ColumnName="Cook" />
+          <ScalarProperty Name="Gardener" ColumnName="Gardener" />
+          <ScalarProperty Name="Administrator" ColumnName="Administrator" />
+          <ScalarProperty Name="Principal" ColumnName="Principal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employment_Status">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Employment_Status">
+        <MappingFragment StoreEntitySet="Employment_Status">
+          <ScalarProperty Name="Employment_Status_ID" ColumnName="Employment_Status_ID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Equipment">
+        <MappingFragment StoreEntitySet="Equipment">
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Equipment_Item_Name" ColumnName="Equipment_Item_Name" />
+          <ScalarProperty Name="Equipment_Purchase_Date" ColumnName="Equipment_Purchase_Date" />
+          <ScalarProperty Name="Equipment_Type_ID" ColumnName="Equipment_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipment_Type">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Equipment_Type">
+        <MappingFragment StoreEntitySet="Equipment_Type">
+          <ScalarProperty Name="Equipment_Type_ID" ColumnName="Equipment_Type_ID" />
+          <ScalarProperty Name="Equipment_Type_Description" ColumnName="Equipment_Type_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homework">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Homework">
+        <MappingFragment StoreEntitySet="Homework">
+          <ScalarProperty Name="Homework_ID" ColumnName="Homework_ID" />
+          <ScalarProperty Name="Report_Card_Template_ID" ColumnName="Report_Card_Template_ID" />
+          <ScalarProperty Name="Homework_Details" ColumnName="Homework_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marking_Scale">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Marking_Scale">
+        <MappingFragment StoreEntitySet="Marking_Scale">
+          <ScalarProperty Name="Marking_Scale_ID" ColumnName="Marking_Scale_ID" />
+          <ScalarProperty Name="Report_Card_Template_ID" ColumnName="Report_Card_Template_ID" />
+          <ScalarProperty Name="Marking_Scale_Details" ColumnName="Marking_Scale_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+          <ScalarProperty Name="MenuDescription" ColumnName="MenuDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu_Item">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Menu_Item">
+        <MappingFragment StoreEntitySet="Menu_Item">
+          <ScalarProperty Name="Menu_Item_ID" ColumnName="Menu_Item_ID" />
+          <ScalarProperty Name="Menu_Item_Description" ColumnName="Menu_Item_Description" />
+          <ScalarProperty Name="Menu_Items_Purchased" ColumnName="Menu_Items_Purchased" />
+          <ScalarProperty Name="Menu_Item_Purchase_Date" ColumnName="Menu_Item_Purchase_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu_Item_Menu">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Menu_Item_Menu">
+        <MappingFragment StoreEntitySet="Menu_Item_Menu">
+          <ScalarProperty Name="Menu_ID" ColumnName="Menu_ID" />
+          <ScalarProperty Name="Menu_Item_ID" ColumnName="Menu_Item_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Line">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Order_Line">
+        <MappingFragment StoreEntitySet="Order_Line">
+          <ScalarProperty Name="Supplier_Order_ID" ColumnName="Supplier_Order_ID" />
+          <ScalarProperty Name="Order_Type_ID" ColumnName="Order_Type_ID" />
+          <ScalarProperty Name="Stationery_ID" ColumnName="Stationery_ID" />
+          <ScalarProperty Name="Cleaning_Material_Item_ID" ColumnName="Cleaning_Material_Item_ID" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Order_Line_Item" ColumnName="Order_Line_Item" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parent_Guardian">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Parent_Guardian">
+        <MappingFragment StoreEntitySet="Parent_Guardian">
+          <ScalarProperty Name="Parent_Guardian_ID" ColumnName="Parent_Guardian_ID" />
+          <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+          <ScalarProperty Name="Parent_Surname" ColumnName="Parent_Surname" />
+          <ScalarProperty Name="Parent_Contact_No" ColumnName="Parent_Contact_No" />
+          <ScalarProperty Name="Parent_Email_Address" ColumnName="Parent_Email_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parent_Guardian_Menu_Item">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Parent_Guardian_Menu_Item">
+        <MappingFragment StoreEntitySet="Parent_Guardian_Menu_Item">
+          <ScalarProperty Name="Parent_Guardian_ID" ColumnName="Parent_Guardian_ID" />
+          <ScalarProperty Name="Menu_Item_ID" ColumnName="Menu_Item_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Progress_Category">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Progress_Category">
+        <MappingFragment StoreEntitySet="Progress_Category">
+          <ScalarProperty Name="Progress_Category_ID" ColumnName="Progress_Category_ID" />
+          <ScalarProperty Name="Marking_Scale_ID" ColumnName="Marking_Scale_ID" />
+          <ScalarProperty Name="Progress_Category_Details" ColumnName="Progress_Category_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="Province_ID" ColumnName="Province_ID" />
+          <ScalarProperty Name="Province_Details" ColumnName="Province_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportCards">
+      <EntityTypeMapping TypeName="CrayonKidsModel.ReportCard">
+        <MappingFragment StoreEntitySet="ReportCard">
+          <ScalarProperty Name="Report_Card_ID" ColumnName="Report_Card_ID" />
+          <ScalarProperty Name="Report_Card_Details" ColumnName="Report_Card_Details" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportCard_Template">
+      <EntityTypeMapping TypeName="CrayonKidsModel.ReportCard_Template">
+        <MappingFragment StoreEntitySet="ReportCard_Template">
+          <ScalarProperty Name="Report_Card_Template_ID" ColumnName="Report_Card_Template_ID" />
+          <ScalarProperty Name="Report_Card_ID" ColumnName="Report_Card_ID" />
+          <ScalarProperty Name="Report_Card_Grade" ColumnName="Report_Card_Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="Schedule_ID" ColumnName="Schedule_ID" />
+          <ScalarProperty Name="School_ID" ColumnName="School_ID" />
+          <ScalarProperty Name="Schedule_details" ColumnName="Schedule_details" />
+          <ScalarProperty Name="Event_date" ColumnName="Event_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schools">
+      <EntityTypeMapping TypeName="CrayonKidsModel.School">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="School_ID" ColumnName="School_ID" />
+          <ScalarProperty Name="School_Name" ColumnName="School_Name" />
+          <ScalarProperty Name="School_Location" ColumnName="School_Location" />
+          <ScalarProperty Name="School_Info_Details" ColumnName="School_Info_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="School_Fees_Status">
+      <EntityTypeMapping TypeName="CrayonKidsModel.School_Fees_Status">
+        <MappingFragment StoreEntitySet="School_Fees_Status">
+          <ScalarProperty Name="School_Fees_Status_ID" ColumnName="School_Fees_Status_ID" />
+          <ScalarProperty Name="School_Fees_Status_Description" ColumnName="School_Fees_Status_Description" />
+          <ScalarProperty Name="Parent_Guardian_ID" ColumnName="Parent_Guardian_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="School_Term">
+      <EntityTypeMapping TypeName="CrayonKidsModel.School_Term">
+        <MappingFragment StoreEntitySet="School_Term">
+          <ScalarProperty Name="School_Term_ID" ColumnName="School_Term_ID" />
+          <ScalarProperty Name="Schedule_ID" ColumnName="Schedule_ID" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Report_Card_ID" ColumnName="Report_Card_ID" />
+          <ScalarProperty Name="Term_details" ColumnName="Term_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Parent_Guardian_ID" ColumnName="Parent_Guardian_ID" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+          <ScalarProperty Name="Student_Surname" ColumnName="Student_Surname" />
+          <ScalarProperty Name="Student_Grade" ColumnName="Student_Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Allergy">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Student_Allergy">
+        <MappingFragment StoreEntitySet="Student_Allergy">
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Allergy_ID" ColumnName="Allergy_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Class">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Student_Class">
+        <MappingFragment StoreEntitySet="Student_Class">
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Emergency">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Student_Emergency">
+        <MappingFragment StoreEntitySet="Student_Emergency">
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subcategories">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Subcategory">
+        <MappingFragment StoreEntitySet="Subcategory">
+          <ScalarProperty Name="Subcategory_ID" ColumnName="Subcategory_ID" />
+          <ScalarProperty Name="Progress_Category_ID" ColumnName="Progress_Category_ID" />
+          <ScalarProperty Name="Subcategory_Details" ColumnName="Subcategory_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+          <ScalarProperty Name="Supplier_Email_Address" ColumnName="Supplier_Email_Address" />
+          <ScalarProperty Name="Supplier_Contact_No" ColumnName="Supplier_Contact_No" />
+          <ScalarProperty Name="Supplier_Address" ColumnName="Supplier_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier_Order">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Supplier_Order">
+        <MappingFragment StoreEntitySet="Supplier_Order">
+          <ScalarProperty Name="Supplier_Order_ID" ColumnName="Supplier_Order_ID" />
+          <ScalarProperty Name="School_ID" ColumnName="School_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Supplier_Order_Details" ColumnName="Supplier_Order_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Test">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+          <ScalarProperty Name="Report_Card_Template_ID" ColumnName="Report_Card_Template_ID" />
+          <ScalarProperty Name="Test_Details" ColumnName="Test_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timeslots">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Timeslot">
+        <MappingFragment StoreEntitySet="Timeslot">
+          <ScalarProperty Name="Timeslot_ID" ColumnName="Timeslot_ID" />
+          <ScalarProperty Name="Timeslot_details" ColumnName="Timeslot_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timeslot_Schedule_Date">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Timeslot_Schedule_Date">
+        <MappingFragment StoreEntitySet="Timeslot_Schedule_Date">
+          <ScalarProperty Name="TimeSlot_ID" ColumnName="TimeSlot_ID" />
+          <ScalarProperty Name="Schedule_ID" ColumnName="Schedule_ID" />
+          <ScalarProperty Name="Date_ID" ColumnName="Date_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Title">
+        <MappingFragment StoreEntitySet="Title">
+          <ScalarProperty Name="Title_ID" ColumnName="Title_ID" />
+          <ScalarProperty Name="Mr" ColumnName="Mr" />
+          <ScalarProperty Name="Mrs" ColumnName="Mrs" />
+          <ScalarProperty Name="Ms" ColumnName="Ms" />
+          <ScalarProperty Name="Dr" ColumnName="Dr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Tbl">
+      <EntityTypeMapping TypeName="CrayonKidsModel.User_Tbl">
+        <MappingFragment StoreEntitySet="User_Tbl">
+          <ScalarProperty Name="User_Tbl_ID" ColumnName="User_Tbl_ID" />
+          <ScalarProperty Name="User_Type_ID" ColumnName="User_Type_ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Type">
+      <EntityTypeMapping TypeName="CrayonKidsModel.User_Type">
+        <MappingFragment StoreEntitySet="User_Type">
+          <ScalarProperty Name="User_Type_ID" ColumnName="User_Type_ID" />
+          <ScalarProperty Name="User_Type1" ColumnName="User_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zip_Code">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Zip_Code">
+        <MappingFragment StoreEntitySet="Zip_Code">
+          <ScalarProperty Name="Zip_Code_ID" ColumnName="Zip_Code_ID" />
+          <ScalarProperty Name="Zip_Code_Details" ColumnName="Zip_Code_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parent_Feedback">
+      <EntityTypeMapping TypeName="CrayonKidsModel.Parent_Feedback">
+        <MappingFragment StoreEntitySet="Parent_Feedback">
+          <ScalarProperty Name="Parent_Feedback_ID" ColumnName="Parent_Feedback_ID" />
+          <ScalarProperty Name="Parent_Guardian_ID" ColumnName="Parent_Guardian_ID" />
+          <ScalarProperty Name="Parent_Feedback_Details" ColumnName="Parent_Feedback_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
