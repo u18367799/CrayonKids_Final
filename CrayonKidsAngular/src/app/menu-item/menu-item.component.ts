@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import { Menu_ItemService } from '../services/menu-item.service';
 import { Menu_Item } from '../shared/menu-item';
 
+
+
 @Component({
   selector: 'app-menu_Item',
   templateUrl: './menu-Item.component.html',
@@ -19,6 +21,8 @@ export class Menu_ItemComponent implements OnInit {
   public displayedColumns = ['Menu_Item_Description', 'Menu_Items_Purchased', 'Menu_Item_Purchase_Date', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Menu_Item>();
 	constructor(private menu_ItemService: Menu_ItemService, private router: Router) {}
+  
+ 
 
 	 ngOnInit(): void{ 
     this.getMenu_Items();

@@ -4,6 +4,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { Chart } from 'chart.js';
 import { ReportsService } from 'src/app/services/reports.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-employee-report',
@@ -17,6 +18,7 @@ export class EmployeeReportComponent implements OnInit {
   chart = [];
   employees: any[];
   today = new Date().toLocaleDateString();
+  maxdate=moment().format("YYYY-MM-DD");
   ngOnInit(): void {
     this.dateForm = this.formbuilder.group({
       startdate: ['', [Validators.required]],

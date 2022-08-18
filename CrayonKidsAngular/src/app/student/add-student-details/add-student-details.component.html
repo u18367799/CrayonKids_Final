@@ -49,7 +49,7 @@
     <div class="row">
       <div class="col-lg-6">
         <mat-form-field>  
-          <label for="grade">Grade (%):</label>
+          <label for="grade">Grade :</label>
           <br>
           <input type="grade" name="Student_Grade" [(ngModel)]="studentData.Student_Grade" class="form-control" formControlName="grade"> <br>
           <small *ngIf="studentForm.get('grade').invalid && studentForm.get('grade').touched" class="text-danger">Student Grade is required (min 0, max 100)</small>
