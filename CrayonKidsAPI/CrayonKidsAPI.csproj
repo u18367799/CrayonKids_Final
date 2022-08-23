@@ -168,6 +168,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\Class_TypeController.cs" />
     <Compile Include="Controllers\EmployeeReportController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -423,6 +424,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Appointment\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\EmployeeReport\" />
     <Folder Include="Views\Menu_Report\" />
