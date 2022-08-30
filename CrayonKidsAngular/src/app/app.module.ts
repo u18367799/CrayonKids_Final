@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AddEmployeeDetailsComponent } from './employee/add-employee-details/add-employee-details.component';
@@ -17,6 +18,8 @@ import { AllergyComponent } from './allergy/allergy.component';
 import { AddAllergyComponent } from './allergy/add-allergy/add-allergy.component';
 import { LoginComponent } from './login/login.component';
 //Materials
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -51,6 +54,13 @@ import { Menu_ItemComponent } from './menu-item/menu-item.component';
 import { AddMenu_ItemComponent } from './menu-item/add-menu-item/add-menu-item.component';
 import { UpdateMenu_ItemComponent } from './menu-item/update-menu-item/update-menu-item.component';
 import { MenuItemsReportComponent } from './reports/menu-items-report/menu-items-report.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { BodyComponent } from './body/body.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { HeaderComponent } from './header/header.component';
+import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.component';
+//import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -80,7 +90,13 @@ import { MenuItemsReportComponent } from './reports/menu-items-report/menu-items
     Menu_ItemComponent,
     AddMenu_ItemComponent,
     UpdateMenu_ItemComponent,
-    MenuItemsReportComponent
+    MenuItemsReportComponent,
+    SidenavComponent,
+    BodyComponent,
+    ScheduleComponent,
+    HeaderComponent,
+    ViewScheduleComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -88,7 +104,6 @@ import { MenuItemsReportComponent } from './reports/menu-items-report/menu-items
     MatTableModule,
     BrowserAnimationsModule,
     CommonModule,
-    ReactiveFormsModule,
     MatCardModule,
     MatDatepickerModule,
     MatButtonModule,
@@ -105,7 +120,11 @@ import { MenuItemsReportComponent } from './reports/menu-items-report/menu-items
     MatNativeDateModule,
     HttpClientModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatMenuModule
+    
   ],
   exports: [
     MatInputModule,

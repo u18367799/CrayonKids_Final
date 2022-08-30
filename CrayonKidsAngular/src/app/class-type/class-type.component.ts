@@ -8,7 +8,7 @@ import { ClassType } from '../shared/class-type';
 @Component({
   selector: 'app-class-type',
   templateUrl: './class-type.component.html',
-  styleUrls: ['./class-type.component.css']
+  styleUrls: ['./class-type.component.scss']
 })
 export class ClassTypeComponent implements OnInit {
 

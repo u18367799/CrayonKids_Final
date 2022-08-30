@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-menu_item',
   templateUrl: './update-menu-item.component.html',
-  styleUrls: ['./update-menu-item.component.css']
+  styleUrls: ['./update-menu-item.component.scss']
 })
 export class UpdateMenu_ItemComponent implements OnInit {
 

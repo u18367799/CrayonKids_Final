@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-class-type',
   templateUrl: './update-class-type.component.html',
-  styleUrls: ['./update-class-type.component.css']
+  styleUrls: ['./update-class-type.component.scss']
 })
 export class UpdateClassTypeComponent implements OnInit {
 

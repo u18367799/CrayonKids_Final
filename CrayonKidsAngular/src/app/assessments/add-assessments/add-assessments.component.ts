@@ -6,7 +6,7 @@ import { AssessmentService } from 'src/app/services/assessment.service';
 @Component({
   selector: 'app-add-assessments',
   templateUrl: './add-assessments.component.html',
-  styleUrls: ['./add-assessments.component.css']
+  styleUrls: ['./add-assessments.component.scss']
 })
 export class AddAssessmentsComponent implements OnInit {
   assessmentForm = new FormGroup({
@@ -19,7 +19,7 @@ export class AddAssessmentsComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.assessmentService.addAssessment(this.assessmentForm.value) 
+    //this.assessmentService.addAssessment(this.assessmentForm.value) 
     this.router.navigate(['/assessmentList'])
     }
 }

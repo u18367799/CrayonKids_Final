@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-class-type',
   templateUrl: './add-class-type.component.html',
-  styleUrls: ['./add-class-type.component.css']
+  styleUrls: ['./add-class-type.component.scss']
 })
 export class AddClassTypeComponent implements OnInit {
 

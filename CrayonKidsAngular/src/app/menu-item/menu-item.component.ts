@@ -10,7 +10,7 @@ import { Menu_Item } from '../shared/menu-item';
 @Component({
   selector: 'app-menu_Item',
   templateUrl: './menu-Item.component.html',
-  styleUrls: ['./menu-Item.component.css']
+  styleUrls: ['./menu-Item.component.scss']
 })
 export class Menu_ItemComponent implements OnInit {
 

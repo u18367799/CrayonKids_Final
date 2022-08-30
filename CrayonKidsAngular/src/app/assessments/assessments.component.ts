@@ -5,7 +5,7 @@ import { Assessment } from '../shared/assessment';
 @Component({
   selector: 'app-assessments',
   templateUrl: './assessments.component.html',
-  styleUrls: ['./assessments.component.css']
+  styleUrls: ['./assessments.component.scss']
 })
 export class AssessmentsComponent implements OnInit {
      

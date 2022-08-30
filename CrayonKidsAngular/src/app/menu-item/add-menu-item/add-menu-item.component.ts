@@ -8,7 +8,7 @@ import { Menu_Item } from 'src/app/shared/menu-item';
 @Component({
   selector: 'app-add-menu_item-details',
   templateUrl: './add-menu-item.component.html',
-  styleUrls: ['./add-menu-item.component.css']
+  styleUrls: ['./add-menu-item.component.scss']
 })
 export class AddMenu_ItemComponent implements OnInit {
 

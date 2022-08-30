@@ -9,7 +9,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-menu-items-report',
   templateUrl: './menu-items-report.component.html',
-  styleUrls: ['./menu-items-report.component.css']
+  styleUrls: ['./menu-items-report.component.scss']
 })
 export class MenuItemsReportComponent implements OnInit {
 

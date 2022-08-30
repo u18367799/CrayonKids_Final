@@ -24,6 +24,8 @@ import { ReportsComponent } from './reports/reports/reports.component';
 import { MenuItemsReportComponent } from './reports/menu-items-report/menu-items-report.component';
 import { Menu_ItemComponent } from './menu-item/menu-item.component';
 import { AddMenu_ItemComponent } from './menu-item/add-menu-item/add-menu-item.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.component';
 
 const routes: Routes = [
   {path: 'assessmentList', component:AssessmentsComponent},
@@ -51,6 +53,8 @@ const routes: Routes = [
   {path: 'menuitems', component: MenuItemsReportComponent},
   {path: 'menu_itemlist', component: Menu_ItemComponent},
   {path: 'addmenu_item', component: AddMenu_ItemComponent},
+  {path: 'schedule', component: ScheduleComponent},
+  {path: 'viewSchedule', component: ViewScheduleComponent},
 
 
   {path: '', redirectTo: '/login', pathMatch: 'full'}

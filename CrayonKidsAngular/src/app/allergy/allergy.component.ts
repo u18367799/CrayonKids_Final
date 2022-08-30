@@ -6,7 +6,7 @@ import { AllergyService } from '../services/allergy.service';
 @Component({
   selector: 'app-allergy',
   templateUrl: './allergy.component.html',
-  styleUrls: ['./allergy.component.css']
+  styleUrls: ['./allergy.component.scss']
 })
 export class AllergyComponent implements OnInit {
 

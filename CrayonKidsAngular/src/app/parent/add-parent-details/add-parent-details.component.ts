@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-parent-details',
   templateUrl: './add-parent-details.component.html',
-  styleUrls: ['./add-parent-details.component.css']
+  styleUrls: ['./add-parent-details.component.scss']
 })
 export class AddParentDetailsComponent implements OnInit {
 
