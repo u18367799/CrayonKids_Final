@@ -59,6 +59,8 @@ import { BodyComponent } from './body/body.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { HeaderComponent } from './header/header.component';
 import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.component';
+import { HelpPageComponent } from './header/help-page/help-page.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 //import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -96,6 +98,7 @@ import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.co
     ScheduleComponent,
     HeaderComponent,
     ViewScheduleComponent,
+    HelpPageComponent,
 
   ],
   imports: [
@@ -123,8 +126,8 @@ import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.co
     MatFormFieldModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatMenuModule
-    
+    MatMenuModule,
+    NgxExtendedPdfViewerModule
   ],
   exports: [
     MatInputModule,
