@@ -6,7 +6,7 @@ import { ReportsService } from 'src/app/services/reports.service';
 @Component({
   selector: 'app-student-numbers',
   templateUrl: './student-numbers.component.html',
-  styleUrls: ['./student-numbers.component.css']
+  styleUrls: ['./student-numbers.component.scss']
 })
 export class StudentNumbersComponent implements OnInit {
 

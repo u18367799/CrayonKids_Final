@@ -39,12 +39,23 @@ namespace CrayonKidsAPI.Controllers
             foreach (var group in menuList)
             {
                 dynamic menu = new ExpandoObject();
-                menu.Position = position++;
                 menu.ProductName = group.Key;
                 menu.TotalQuantity = group.Sum(ss => ss.Menu_Items_Purchased);
                 menuItems.Add(menu);
             }
-            outObject.Menu_Items = menuItems;
+            var newMenuItems = menuItems.OrderByDescending(zz => zz.TotalQuantity);
+            List<dynamic> newMenuList = new List<dynamic>();
+            foreach (var item in newMenuItems)
+            {
+                dynamic newMenuItem = new ExpandoObject();
+                newMenuItem.Position = position++;
+                newMenuItem.ProductName = item.ProductName;
+                newMenuItem.TotalQuantity = item.TotalQuantity;
+                newMenuList.Add(newMenuItem);
+
+            }
+
+            outObject.Menu_Items = newMenuList;
 
             return outObject;
         }

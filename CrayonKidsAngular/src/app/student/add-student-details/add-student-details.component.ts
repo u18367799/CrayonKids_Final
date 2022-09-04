@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-add-student-details',
   templateUrl: './add-student-details.component.html',
-  styleUrls: ['./add-student-details.component.css']
+  styleUrls: ['./add-student-details.component.scss']
 })
 export class AddStudentDetailsComponent implements OnInit {
 

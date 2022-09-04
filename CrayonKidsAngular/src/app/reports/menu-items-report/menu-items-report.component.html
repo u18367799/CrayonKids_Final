@@ -20,6 +20,7 @@
             placeholder="From Date"
             class="form-control"
             required
+            max="{{maxdate}}"
           />
         </div>
       </div>
@@ -32,6 +33,8 @@
             placeholder="To Date"
             class="form-control"
             required
+            max="{{maxdate}}"
+           min="{{dateForm.value.startdate}}"
           />
         </div>
       </div>
@@ -62,7 +65,7 @@
       <div class="logo mt-5" style="font-size: 90px">Crayon Kids</div>
       <br /><br />
       <hr class="cover" />
-      <h1 class="white">Student Numbers Report</h1>
+      <h1 class="white">Menu Items Report</h1>
       <h3 class="cover white">Prepared by: LoggedIn Person</h3>
       <h3 class="cover white">Date Prepared: {{ today }}</h3>
     </div>
@@ -80,7 +83,7 @@
           <table class="table" id="table">
             <thead>
               <th>Position</th>
-              <th>Product Name</th>
+              <th>Menu Item Description</th>
               <th>Total Quantity Purchased</th>
             </thead>
             <tbody>

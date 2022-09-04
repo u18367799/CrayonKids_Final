@@ -4,11 +4,12 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { Chart } from 'chart.js';
 import { ReportsService } from 'src/app/services/reports.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-menu-items-report',
   templateUrl: './menu-items-report.component.html',
-  styleUrls: ['./menu-items-report.component.css']
+  styleUrls: ['./menu-items-report.component.scss']
 })
 export class MenuItemsReportComponent implements OnInit {
 
@@ -17,6 +18,8 @@ export class MenuItemsReportComponent implements OnInit {
   chart = [];
   menu: any[];
   today = new Date().toLocaleDateString();
+  maxdate=moment().format("YYYY-MM-DD");
+
   ngOnInit(): void {
     this.dateForm = this.formbuilder.group({
       startdate: ['', [Validators.required]],
@@ -70,7 +73,7 @@ export class MenuItemsReportComponent implements OnInit {
           },
           title: {
             display: true,
-            text: 'Employees Per Province',
+            text: 'Most Purchased Menu Items',
             fontColor: "black",
             fontSize: 18,
           },

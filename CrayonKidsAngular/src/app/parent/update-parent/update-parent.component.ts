@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-parent',
   templateUrl: './update-parent.component.html',
-  styleUrls: ['./update-parent.component.css']
+  styleUrls: ['./update-parent.component.scss']
 })
 export class UpdateParentComponent implements OnInit {
 

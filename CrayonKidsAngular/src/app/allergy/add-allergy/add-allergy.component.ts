@@ -6,7 +6,7 @@ import { AllergyService } from 'src/app/services/allergy.service';
 @Component({
   selector: 'app-add-allergy',
   templateUrl: './add-allergy.component.html',
-  styleUrls: ['./add-allergy.component.css']
+  styleUrls: ['./add-allergy.component.scss']
 })
 export class AddAllergyComponent implements OnInit {
 
@@ -26,8 +26,8 @@ export class AddAllergyComponent implements OnInit {
   }
 
   onSubmit(){
-    this.allergyService.addAllergy(this.allergyForm.value)
+  /*   this.allergyService.addAllergy(this.allergyForm.value)
     console.log(this.allergyService.addAllergy(this.allergyForm.value))
-    this.router.navigate(['/allergylist'])
+    this.router.navigate(['/allergylist']) */
   }
 }
