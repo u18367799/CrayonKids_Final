@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="Allergy_ID" />
           </Key>
-          <Property Name="Allergy_ID" Type="int" Nullable="false" />
+          <Property Name="Allergy_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Allergy_Details" Type="varchar" MaxLength="20" />
           <Property Name="Allergy_Date" Type="date" />
         </EntityType>
@@ -44,7 +44,7 @@
           <Key>
             <PropertyRef Name="Appointment_Booking_ID" />
           </Key>
-          <Property Name="Appointment_Booking_ID" Type="int" Nullable="false" />
+          <Property Name="Appointment_Booking_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Appointment_Booking_Details" Type="varchar" MaxLength="20" />
           <Property Name="Booking_Status_ID" Type="int" />
           <Property Name="Appointment_Booking_Date" Type="date" />
@@ -78,7 +78,7 @@
           <Key>
             <PropertyRef Name="Class_ID" />
           </Key>
-          <Property Name="Class_ID" Type="int" Nullable="false" />
+          <Property Name="Class_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Class_Name" Type="varchar" MaxLength="20" />
           <Property Name="Class_Capacity" Type="varchar" MaxLength="20" />
         </EntityType>
@@ -201,7 +201,7 @@
           <Key>
             <PropertyRef Name="Menu_ID" />
           </Key>
-          <Property Name="Menu_ID" Type="int" Nullable="false" />
+          <Property Name="Menu_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MenuDescription" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Menu_Item">
@@ -926,7 +926,7 @@ warning 6002: The table/view 'CrayonKids.dbo.Parent_Feedback' does not have a pr
           <Key>
             <PropertyRef Name="Allergy_ID" />
           </Key>
-          <Property Name="Allergy_ID" Type="Int32" Nullable="false" />
+          <Property Name="Allergy_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Allergy_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Allergy_Date" Type="DateTime" Precision="0" />
         </EntityType>
@@ -958,7 +958,7 @@ warning 6002: The table/view 'CrayonKids.dbo.Parent_Feedback' does not have a pr
           <Key>
             <PropertyRef Name="Appointment_Booking_ID" />
           </Key>
-          <Property Name="Appointment_Booking_ID" Type="Int32" Nullable="false" />
+          <Property Name="Appointment_Booking_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Appointment_Booking_Details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Booking_Status_ID" Type="Int32" />
           <Property Name="Appointment_Booking_Date" Type="DateTime" Precision="0" />
@@ -996,7 +996,7 @@ warning 6002: The table/view 'CrayonKids.dbo.Parent_Feedback' does not have a pr
           <Key>
             <PropertyRef Name="Class_ID" />
           </Key>
-          <Property Name="Class_ID" Type="Int32" Nullable="false" />
+          <Property Name="Class_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Class_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Class_Capacity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -1125,7 +1125,7 @@ warning 6002: The table/view 'CrayonKids.dbo.Parent_Feedback' does not have a pr
           <Key>
             <PropertyRef Name="Menu_ID" />
           </Key>
-          <Property Name="Menu_ID" Type="Int32" Nullable="false" />
+          <Property Name="Menu_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MenuDescription" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Menu_Item">
