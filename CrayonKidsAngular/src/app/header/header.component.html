@@ -1,33 +1,32 @@
 <mat-toolbar>
-    <mat-toolbar-row class="justify-content-between">
-        <div class="col-lg-4"><img src="./../../assets/Crayon_Kids.png"  style="width:120px;height:110px;"></div> <div class="col-lg-4"> 
-            <button class="btn-close" a routerLink="help-page"><i class='far fa-question-circle' style='font-size:22px;color: #74011e'></i></button></div> 
-            <div class="col-lg-4"></div> 
-            <div class="col-lg-4"></div>
-             <div class="col-lg-4"></div> 
-      <div class="col-lg-4">
-        <ul class="row m-0 align-items-center">
-          <li>
-            <button
-              mat-button
-              [matMenuTriggerFor]="menu"
-              class="hold"
+  <mat-toolbar-row class="justify-content-between">
+      <div class="col-lg-4"><img src="./../../assets/Crayon_Kids.png"  style="width:120px;height:110px;"></div> 
+      <div class> 
+          <button class="btn-close" a routerLink="help-page"><i class='far fa-question-circle' style='font-size:22px;color: #74011e'></i></button>
+        </div> 
+          
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="hold"
+          >
+            <img src="./../../assets/Female.jpg" alt="" class="user-image"/>
+            User Name
+            <mat-icon class="user-image-icon ml-1"
+              >keyboard_arrow_down</mat-icon
             >
-              <img src="./../../assets/Female.jpg" alt="" class="user-image"/>
-              User Name
-              <mat-icon class="user-image-icon ml-1"
-                >keyboard_arrow_down</mat-icon
-              >
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
             </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <mat-icon>exit_to_app</mat-icon>
-                Logout
-              </button>
-            </mat-menu>
-          </li>
-        </ul>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

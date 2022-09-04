@@ -460,6 +460,10 @@ C:\Users\mabas\Desktop\CK_FINAL\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonK
 C:\Users\mabas\Desktop\CK_FINAL\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.csproj.CopyComplete
 C:\Users\mabas\Desktop\CK_FINAL\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.dll
 C:\Users\mabas\Desktop\CK_FINAL\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.pdb
+C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.csproj.AssemblyReference.cache
+C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.csproj.CoreCompileInputs.cache
+C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.dll
+C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.pdb
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\CrayonKidsAPI.dll.config
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\CrayonKidsAPI.dll
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\CrayonKidsAPI.pdb
@@ -547,9 +551,10 @@ C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\System.Web.W
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\System.Web.WebPages.Razor.xml
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\Antlr3.Runtime.pdb
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.csproj.AssemblyReference.cache
-C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.csproj.CoreCompileInputs.cache
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.csproj.CopyComplete
+<<<<<<< Updated upstream
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.dll
 C:\Users\Junior\Documents\GitHub\CrayonKids_Final\CrayonKidsAPI\obj\Debug\CrayonKidsAPI.pdb
 >>>>>>> e0a4f1d84d3d294ba7c08b5a821848ff524a21ac
+=======
+>>>>>>> Stashed changes

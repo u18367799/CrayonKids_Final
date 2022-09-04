@@ -61,6 +61,13 @@ import { HeaderComponent } from './header/header.component';
 import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.component';
 import { HelpPageComponent } from './header/help-page/help-page.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { ChildPerformanceComponent } from './child-performance/child-performance.component';
+import { ViewProgressComponent } from './child-performance/view-progress/view-progress.component';
+import { ParentFeedbackComponent } from './child-performance/parent-feedback/parent-feedback.component';
 //import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -99,6 +106,9 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     HeaderComponent,
     ViewScheduleComponent,
     HelpPageComponent,
+    ChildPerformanceComponent,
+    ViewProgressComponent,
+    ParentFeedbackComponent,
 
   ],
   imports: [
@@ -127,7 +137,10 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
     ReactiveFormsModule,
     MatToolbarModule,
     MatMenuModule,
-    NgxExtendedPdfViewerModule
+    NgxExtendedPdfViewerModule,
+     FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    NgbModalModule,
   ],
   exports: [
     MatInputModule,

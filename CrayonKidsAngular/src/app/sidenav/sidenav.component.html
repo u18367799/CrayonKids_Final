@@ -1,4 +1,4 @@
-<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''" >
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()"><i class='fas fa-th-list'></i></button>
         <div class="logo-text" @fadeInOut *ngIf="collapsed">CrayonKids</div>
@@ -16,17 +16,17 @@
                 </span>
             </a>
             <ul *ngIf="collapsed && data.submenuLevel1 && data.submenuLevel1.length > 0"
-                [ngStyle]="{'margin-left': '80px'}">
+                [ngStyle]="{'margin-left': '60px'}">
                 <li  class="sidenav-nav-item2" *ngFor="let sub1 of data.submenuLevel1">
-                    <a class="sidenav-nav-link2" [routerLink]="[sub1.routeLink]">  
-                        
-                        <span >{{sub1.label}}</span>
+                    <a class="sidenav-nav-link2" [routerLink]="[sub1.routeLink]"> 
+                                        
+                        <span class="sidenav-link-text2">{{sub1.label}}</span>
                     </a>
 
                     <ul *ngIf="sub1.submenuLevel2 && sub1.submenuLevel2.length > 0" [ngStyle]="{'margin-left': '25px'}">
                         <li class="sidenav-nav-item3"*ngFor="let sub2 of sub1.submenuLevel2">
                             <a class="sidenav-nav-link3" [routerLink]="[sub2.routeLink]">
-                                <span >{{sub2.label}}</span>
+                                <span class="sidenav-link-text3" >{{sub2.label}}</span>
                             </a>
                         </li>
                     </ul>

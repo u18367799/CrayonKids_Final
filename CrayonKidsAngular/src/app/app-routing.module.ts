@@ -27,6 +27,9 @@ import { AddMenu_ItemComponent } from './menu-item/add-menu-item/add-menu-item.c
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ViewScheduleComponent } from './schedule/view-schedule/view-schedule.component';
 import { HelpPageComponent } from './header/help-page/help-page.component';
+import { ChildPerformanceComponent } from './child-performance/child-performance.component';
+import { ViewProgressComponent } from './child-performance/view-progress/view-progress.component';
+import { ParentFeedbackComponent } from './child-performance/parent-feedback/parent-feedback.component';
 
 const routes: Routes = [
   {path: 'assessmentList', component:AssessmentsComponent},
@@ -57,6 +60,10 @@ const routes: Routes = [
   {path: 'schedule', component: ScheduleComponent},
   {path: 'viewSchedule', component: ViewScheduleComponent},
   {path: 'help-page', component: HelpPageComponent},
+  {path: 'child-performance', component: ChildPerformanceComponent},
+  {path: 'view-progress', component: ViewProgressComponent},
+  {path: 'parent-feedback', component: ParentFeedbackComponent},
+
 
 
   {path: '', redirectTo: '/login', pathMatch: 'full'}

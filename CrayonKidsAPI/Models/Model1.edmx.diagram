@@ -4,7 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< Updated upstream
       <Diagram DiagramId="89129d2773ce47c480a283860d9be313" Name="Diagram1">
+=======
+      <Diagram DiagramId="f61d2478c77f4e14a24e139935a472da" Name="Diagram1">
+>>>>>>> Stashed changes
         <EntityTypeShape EntityType="CrayonKidsModel.C__EFMigrationsHistory" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CrayonKidsModel.Allergy" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CrayonKidsModel.Application" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />

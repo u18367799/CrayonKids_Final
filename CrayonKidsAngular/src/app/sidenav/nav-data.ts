@@ -76,10 +76,29 @@ export const navbarData = [
                 routeLink: 'menuitems',
                 icon: 'fal fa-tags', 
                 label: 'Menu_Items Report',
-                submenuLevel2: [
-                    
+                submenuLevel2: [                    
                 ]
             }
+        ]
+    },
+    {
+        routeLink: 'child-performance',
+        icon: 'fas fa-book-reader',
+        label: 'Child Performance',
+        submenuLevel1: [
+            {
+                routeLink: 'view-progress',
+                icon: 'fal fa-tags', 
+                label: 'View Child Progress',
+            },
+            {
+                routeLink: 'parent-feedback',
+                icon: 'fal fa-tags', 
+                label: 'Provide Feedback',
+                submenuLevel2: [                
+                ]
+            },
+           
         ]
     },
 
