@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="heading">
+    <h1>Menu Items Report</h1>
+    <p>Select purchase date range for menu items:</p>
+  </div>
+  <form
+    [formGroup]="dateForm"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    style="color: white"
+  >
+    <div class="">
+      <div class="col">
+        <label>Start-Date: <i class="far fa-calendar"></i></label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend"></div>
+          <input
+            type="date"
+            formControlName="startdate"
+            placeholder="From Date"
+            class="form-control"
+            required
+            max="{{maxdate}}"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <label>End-Date: <i class="far fa-calendar"></i></label>
+        <div class="input-group">
+          <input
+            type="date"
+            formControlName="enddate"
+            placeholder="To Date"
+            class="form-control"
+            required
+            max="{{maxdate}}"
+           min="{{dateForm.value.startdate}}"
+          />
+        </div>
+      </div>
+
+      <br />
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Report</button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      style="float: right"
+      (click)="download()"
+    >
+      <i class="fa fa-file-pdf-o mr-1"></i>
+      Download PDF
+    </button>
+  </form>
+
+  <br />
+  <br />
+  <hr class="double" />
+  <br />
+
+  <div class="shapeContainer mt-5" id="pdf" style="color: black">
+    <div class="col-sm-6 mt-5"></div>
+    <div class="col-sm-6">
+      <br />
+      <div class="logo mt-5" style="font-size: 90px">Crayon Kids</div>
+      <br /><br />
+      <hr class="cover" />
+      <h1 class="white">Menu Items Report</h1>
+      <h3 class="cover white">Prepared by: LoggedIn Person</h3>
+      <h3 class="cover white">Date Prepared: {{ today }}</h3>
+    </div>
+    <div class="container">
+      <hr />
+      <br />
+      <br />
+      <div class="container mt-5">
+        <hr />
+        <div *ngIf="chart" class="reportChart" style="width: 95%">
+          <canvas id="canvas" style="height: 30%">{{ chart }}</canvas>
+        </div>
+
+        <div class="mt-5">
+          <table class="table" id="table">
+            <thead>
+              <th>Position</th>
+              <th>Menu Item Description</th>
+              <th>Total Quantity Purchased</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of menu">
+                <td>{{ item.Position }}</td>
+                <td>{{ item.ProductName }}</td>
+                <td>{{ item.TotalQuantity }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

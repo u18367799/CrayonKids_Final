@@ -1,0 +1,123 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">C</button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">CrayonKids</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item">
+            <a class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fal fa-home'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Home
+                </span>
+            </a>
+            <a *ngIf="parentLoggedIn" routerLink="/parentpayment" class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fal fa-home'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Payments
+                </span>
+            </a>
+            <a *ngIf="parentLoggedIn" routerLink="/application" class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fal fa-home'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Applications
+                </span>
+            </a>
+            <a class="sidenav-nav-link" routerLink="/employeelist" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fas fa-chalkboard-teacher'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Employees
+                </span>
+            </a>
+            <a class="sidenav-nav-link" routerLink="/studentlist" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fas fa-user-graduate'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Students
+                </span>
+            </a>
+            <a class="sidenav-nav-link" routerLink="/parentlist" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fas fa-user-friends'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Parents
+                </span>
+            </a>
+            <a *ngIf="parentLoggedIn" routerLink="/payments" class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fal fa-home'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Payments
+                </span>
+            </a>
+            <a class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fas fa-school'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    School
+                </span>
+            </a>
+            <ul *ngIf="collapsed " [ngStyle]="{'margin-left': '80px'}">
+                <li class="sidenav-nav-item2">
+                    <a class="sidenav-nav-link2">
+
+                        <span>Main Campus</span>
+                    </a>
+
+                    <ul [ngStyle]="{'margin-left': '25px'}">
+                        <li class="sidenav-nav-item3">
+                            <a class="sidenav-nav-link3">
+                                <span>Class</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul [ngStyle]="{'margin-left': '25px'}">
+                        <li class="sidenav-nav-item3">
+                            <a class="sidenav-nav-link3">
+                                <span>Equipment</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul [ngStyle]="{'margin-left': '25px'}">
+                        <li class="sidenav-nav-item3">
+                            <a class="sidenav-nav-link3">
+                                <span>Supplier</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul [ngStyle]="{'margin-left': '25px'}">
+                        <li class="sidenav-nav-item3">
+                            <a class="sidenav-nav-link3">
+                                <span>Schedule</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="sidenav-nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="'fal fa-file'"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    Reports
+                </span>
+            </a>
+            <ul *ngIf="collapsed "  [ngStyle]="{'margin-left': '80px'}">
+                <li class="sidenav-nav-item2">
+                    <a class="sidenav-nav-link2" routerLink="/employee">
+                        <span>Employee Report</span>
+                    </a>
+
+                </li>
+                <li class="sidenav-nav-item2">
+                    <a class="sidenav-nav-link2" routerLink="/studentnumbers">
+                        <span>Student Report</span>
+                    </a>
+                </li>
+                <li class="sidenav-nav-item2">
+                    <a class="sidenav-nav-link2" routerLink="/menuitems">
+                        <span>Menu Items Report</span>
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,1004 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CrayonKidsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__EFMigrationsHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Allergy">
+    <Key>
+      <PropertyRef Name="Allergy_ID" />
+    </Key>
+    <Property Name="Allergy_ID" Type="int" Nullable="false" />
+    <Property Name="Allergy_Details" Type="varchar" MaxLength="20" />
+    <Property Name="Allergy_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Application_ID" />
+    </Key>
+    <Property Name="Application_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Application_Status_ID" Type="int" />
+    <Property Name="Application_Date" Type="date" />
+    <Property Name="Parent_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Parent_Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Parent_Contact_No" Type="varchar" MaxLength="20" />
+    <Property Name="Parent_Email" Type="varchar" MaxLength="50" />
+    <Property Name="Student_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Student_Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Student_Grade" Type="int" />
+  </EntityType>
+  <EntityType Name="Application_Status">
+    <Key>
+      <PropertyRef Name="Application_Status_ID" />
+    </Key>
+    <Property Name="Application_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Appointment_Booking">
+    <Key>
+      <PropertyRef Name="Appointment_Booking_ID" />
+    </Key>
+    <Property Name="Appointment_Booking_ID" Type="int" Nullable="false" />
+    <Property Name="Appointment_Booking_Details" Type="varchar" MaxLength="20" />
+    <Property Name="Booking_Status_ID" Type="int" />
+    <Property Name="Appointment_Booking_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Assessment">
+    <Key>
+      <PropertyRef Name="Assessment_ID" />
+    </Key>
+    <Property Name="Assessment_ID" Type="int" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="int" />
+    <Property Name="Assessment_Details" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Booking_Status">
+    <Key>
+      <PropertyRef Name="Booking_Status_ID" />
+    </Key>
+    <Property Name="Booking_Status_ID" Type="int" Nullable="false" />
+    <Property Name="Accepted" Type="varchar" MaxLength="20" />
+    <Property Name="Rejected" Type="varchar" MaxLength="20" />
+    <Property Name="Pending" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="City_ID" />
+    </Key>
+    <Property Name="City_ID" Type="int" Nullable="false" />
+    <Property Name="City_Details" Type="varchar" MaxLength="50" />
+    <Property Name="Province_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Class_ID" />
+    </Key>
+    <Property Name="Class_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Class_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Class_Capacity" Type="varchar" MaxLength="20" />
+    <Property Name="Student_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Class_Class_Type">
+    <Key>
+      <PropertyRef Name="Class_ID" />
+      <PropertyRef Name="Class_Type_ID" />
+    </Key>
+    <Property Name="Class_ID" Type="int" Nullable="false" />
+    <Property Name="Class_Type_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Class_Type">
+    <Key>
+      <PropertyRef Name="Class_Type_ID" />
+    </Key>
+    <Property Name="Class_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Grade" Type="int" />
+  </EntityType>
+  <EntityType Name="Class_Type_Employee">
+    <Key>
+      <PropertyRef Name="Class_Type_ID" />
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Class_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Employee_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="Complaint_ID" />
+    </Key>
+    <Property Name="Complaint_ID" Type="int" Nullable="false" />
+    <Property Name="Complaint_details" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DateTable">
+    <Key>
+      <PropertyRef Name="Date_ID" />
+    </Key>
+    <Property Name="Date_ID" Type="int" Nullable="false" />
+    <Property Name="Date_details" Type="varchar" MaxLength="50" />
+    <Property Name="Year" Type="date" />
+    <Property Name="Month" Type="date" />
+  </EntityType>
+  <EntityType Name="Emergency">
+    <Key>
+      <PropertyRef Name="Emergency_ID" />
+    </Key>
+    <Property Name="Emergency_ID" Type="int" Nullable="false" />
+    <Property Name="Emergency_Details" Type="varchar" MaxLength="20" />
+    <Property Name="Emergency_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Birth_Date" Type="date" />
+    <Property Name="Hire_Date" Type="date" />
+    <Property Name="Contact_No" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="20" />
+    <Property Name="Street_Address" Type="varchar" MaxLength="50" />
+    <Property Name="Address_2" Type="varchar" MaxLength="50" />
+    <Property Name="Province" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Postal_Code" Type="varchar" MaxLength="50" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee_Type">
+    <Key>
+      <PropertyRef Name="Employee_Type_ID" />
+    </Key>
+    <Property Name="Employee_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Teacher" Type="varchar" MaxLength="50" />
+    <Property Name="Cook" Type="varchar" MaxLength="50" />
+    <Property Name="Gardener" Type="varchar" MaxLength="50" />
+    <Property Name="Administrator" Type="varchar" MaxLength="50" />
+    <Property Name="Principal" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employment_Status">
+    <Key>
+      <PropertyRef Name="Employment_Status_ID" />
+    </Key>
+    <Property Name="Employment_Status_ID" Type="int" Nullable="false" />
+    <Property Name="Active" Type="varchar" MaxLength="20" />
+    <Property Name="Inactive" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Equipment_ID" />
+    </Key>
+    <Property Name="Equipment_ID" Type="int" Nullable="false" />
+    <Property Name="Equipment_Item_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Equipment_Purchase_Date" Type="date" />
+    <Property Name="Equipment_Type_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Equipment_Type">
+    <Key>
+      <PropertyRef Name="Equipment_Type_ID" />
+    </Key>
+    <Property Name="Equipment_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Equipment_Type_Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Homework">
+    <Key>
+      <PropertyRef Name="Homework_ID" />
+    </Key>
+    <Property Name="Homework_ID" Type="int" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="int" />
+    <Property Name="Homework_Details" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Marking_Scale">
+    <Key>
+      <PropertyRef Name="Marking_Scale_ID" />
+    </Key>
+    <Property Name="Marking_Scale_ID" Type="int" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="int" />
+    <Property Name="Marking_Scale_Details" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Menu_ID" />
+    </Key>
+    <Property Name="Menu_ID" Type="int" Nullable="false" />
+    <Property Name="MenuDescription" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Menu_Item">
+    <Key>
+      <PropertyRef Name="Menu_Item_ID" />
+    </Key>
+    <Property Name="Menu_Item_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Item_Description" Type="varchar" MaxLength="20" />
+    <Property Name="Menu_Items_Purchased" Type="int" />
+    <Property Name="Menu_Item_Purchase_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Menu_Item_Menu">
+    <Key>
+      <PropertyRef Name="Menu_ID" />
+      <PropertyRef Name="Menu_Item_ID" />
+    </Key>
+    <Property Name="Menu_ID" Type="int" Nullable="false" />
+    <Property Name="Menu_Item_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order_Line">
+    <Key>
+      <PropertyRef Name="Supplier_Order_ID" />
+      <PropertyRef Name="Order_Type_ID" />
+      <PropertyRef Name="Stationery_ID" />
+      <PropertyRef Name="Cleaning_Material_Item_ID" />
+      <PropertyRef Name="Equipment_ID" />
+    </Key>
+    <Property Name="Supplier_Order_ID" Type="int" Nullable="false" />
+    <Property Name="Order_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Stationery_ID" Type="int" Nullable="false" />
+    <Property Name="Cleaning_Material_Item_ID" Type="int" Nullable="false" />
+    <Property Name="Equipment_ID" Type="int" Nullable="false" />
+    <Property Name="Order_Line_Item" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Parent_Feedback">
+    <Key>
+      <PropertyRef Name="Parent_Feedback_ID" />
+    </Key>
+    <Property Name="Parent_Feedback_ID" Type="int" Nullable="false" />
+    <Property Name="Parent_Guardian_ID" Type="int" />
+    <Property Name="Parent_Feedback_Details" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Parent_Guardian">
+    <Key>
+      <PropertyRef Name="Parent_Guardian_ID" />
+    </Key>
+    <Property Name="Parent_Guardian_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Application_ID" Type="int" />
+    <Property Name="Parent_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Parent_Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Parent_Contact_No" Type="varchar" MaxLength="20" />
+    <Property Name="Parent_Email_Address" Type="varchar" MaxLength="50" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Parent_Guardian_Menu_Item">
+    <Key>
+      <PropertyRef Name="Parent_Guardian_ID" />
+      <PropertyRef Name="Menu_Item_ID" />
+    </Key>
+    <Property Name="Parent_Guardian_ID" Type="int" Nullable="false" />
+    <Property Name="Menu_Item_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payment_ID" />
+    </Key>
+    <Property Name="Payment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_ID" Type="int" />
+    <Property Name="Proof_Of_Payment" Type="varchar(max)" />
+    <Property Name="Payment_Date" Type="date" />
+    <Property Name="Payment_Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Progress_Category">
+    <Key>
+      <PropertyRef Name="Progress_Category_ID" />
+    </Key>
+    <Property Name="Progress_Category_ID" Type="int" Nullable="false" />
+    <Property Name="Marking_Scale_ID" Type="int" />
+    <Property Name="Progress_Category_Details" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Province_ID" />
+    </Key>
+    <Property Name="Province_ID" Type="int" Nullable="false" />
+    <Property Name="Province_Details" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReportCard">
+    <Key>
+      <PropertyRef Name="Report_Card_ID" />
+    </Key>
+    <Property Name="Report_Card_ID" Type="int" Nullable="false" />
+    <Property Name="Report_Card_Details" Type="varchar" MaxLength="200" />
+    <Property Name="Student_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="ReportCard_Template">
+    <Key>
+      <PropertyRef Name="Report_Card_Template_ID" />
+    </Key>
+    <Property Name="Report_Card_Template_ID" Type="int" Nullable="false" />
+    <Property Name="Report_Card_ID" Type="int" />
+    <Property Name="Report_Card_Grade" Type="int" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="Schedule_ID" />
+    </Key>
+    <Property Name="Schedule_ID" Type="int" Nullable="false" />
+    <Property Name="School_ID" Type="int" />
+    <Property Name="Schedule_details" Type="varchar" MaxLength="200" />
+    <Property Name="Event_date" Type="date" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="School_ID" />
+    </Key>
+    <Property Name="School_ID" Type="int" Nullable="false" />
+    <Property Name="School_Name" Type="varchar" MaxLength="50" />
+    <Property Name="School_Location" Type="varchar" MaxLength="50" />
+    <Property Name="School_Info_Details" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="School_Fees">
+    <Key>
+      <PropertyRef Name="School_Fees_ID" />
+    </Key>
+    <Property Name="School_Fees_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_ID" Type="int" />
+    <Property Name="Fee_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Amount_Outstanding" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Last_Payment" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="School_Fees_Status">
+    <Key>
+      <PropertyRef Name="School_Fees_Status_ID" />
+    </Key>
+    <Property Name="School_Fees_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="School_Fees_Status_Description" Type="varchar" MaxLength="50" />
+    <Property Name="Parent_Guardian_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="School_Term">
+    <Key>
+      <PropertyRef Name="School_Term_ID" />
+    </Key>
+    <Property Name="School_Term_ID" Type="int" Nullable="false" />
+    <Property Name="Schedule_ID" Type="int" />
+    <Property Name="Student_ID" Type="int" />
+    <Property Name="Report_Card_ID" Type="int" />
+    <Property Name="Term_details" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parent_Guardian_ID" Type="int" />
+    <Property Name="Student_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Student_Surname" Type="varchar" MaxLength="50" />
+    <Property Name="Student_Grade" Type="int" />
+  </EntityType>
+  <EntityType Name="Student_Allergy">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+      <PropertyRef Name="Allergy_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="int" Nullable="false" />
+    <Property Name="Allergy_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student_Class">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+      <PropertyRef Name="Class_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="int" Nullable="false" />
+    <Property Name="Class_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student_Emergency">
+    <Key>
+      <PropertyRef Name="Student_ID" />
+      <PropertyRef Name="Emergency_ID" />
+    </Key>
+    <Property Name="Student_ID" Type="int" Nullable="false" />
+    <Property Name="Emergency_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subcategory">
+    <Key>
+      <PropertyRef Name="Subcategory_ID" />
+    </Key>
+    <Property Name="Subcategory_ID" Type="int" Nullable="false" />
+    <Property Name="Progress_Category_ID" Type="int" />
+    <Property Name="Subcategory_Details" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_ID" />
+    </Key>
+    <Property Name="Supplier_ID" Type="int" Nullable="false" />
+    <Property Name="Supplier_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Supplier_Email_Address" Type="varchar" MaxLength="20" />
+    <Property Name="Supplier_Contact_No" Type="varchar" MaxLength="20" />
+    <Property Name="Supplier_Address" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Supplier_Order">
+    <Key>
+      <PropertyRef Name="Supplier_Order_ID" />
+    </Key>
+    <Property Name="Supplier_Order_ID" Type="int" Nullable="false" />
+    <Property Name="School_ID" Type="int" />
+    <Property Name="Employee_ID" Type="int" />
+    <Property Name="Supplier_ID" Type="int" />
+    <Property Name="Supplier_Order_Details" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Test_ID" />
+    </Key>
+    <Property Name="Test_ID" Type="int" Nullable="false" />
+    <Property Name="Report_Card_Template_ID" Type="int" />
+    <Property Name="Test_Details" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Timeslot">
+    <Key>
+      <PropertyRef Name="Timeslot_ID" />
+    </Key>
+    <Property Name="Timeslot_ID" Type="int" Nullable="false" />
+    <Property Name="Timeslot_details" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Timeslot_Schedule_Date">
+    <Key>
+      <PropertyRef Name="TimeSlot_ID" />
+      <PropertyRef Name="Schedule_ID" />
+      <PropertyRef Name="Date_ID" />
+    </Key>
+    <Property Name="TimeSlot_ID" Type="int" Nullable="false" />
+    <Property Name="Schedule_ID" Type="int" Nullable="false" />
+    <Property Name="Date_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="Title_ID" />
+    </Key>
+    <Property Name="Title_ID" Type="int" Nullable="false" />
+    <Property Name="Mr" Type="varchar" MaxLength="2" />
+    <Property Name="Mrs" Type="varchar" MaxLength="3" />
+    <Property Name="Ms" Type="varchar" MaxLength="3" />
+    <Property Name="Dr" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="User_Tbl">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Type_ID" Type="int" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User_Type">
+    <Key>
+      <PropertyRef Name="User_Type_ID" />
+    </Key>
+    <Property Name="User_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Zip_Code">
+    <Key>
+      <PropertyRef Name="Zip_Code_ID" />
+    </Key>
+    <Property Name="Zip_Code_ID" Type="int" Nullable="false" />
+    <Property Name="Zip_Code_Details" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Appointme__Booki__0F624AF8">
+    <End Role="Booking_Status" Type="Self.Booking_Status" Multiplicity="0..1" />
+    <End Role="Appointment_Booking" Type="Self.Appointment_Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking_Status">
+        <PropertyRef Name="Booking_Status_ID" />
+      </Principal>
+      <Dependent Role="Appointment_Booking">
+        <PropertyRef Name="Booking_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Assessmen__Repor__68487DD7">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__Province_I__2CF2ADDF">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Province_ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Province_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Equipment__Equip__1AD3FDA4">
+    <End Role="Equipment_Type" Type="Self.Equipment_Type" Multiplicity="0..1" />
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment_Type">
+        <PropertyRef Name="Equipment_Type_ID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="Equipment_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Homework__Report__6B24EA82">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Homework" Type="Self.Homework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Homework">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Marking_S__Repor__6E01572D">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Marking_Scale" Type="Self.Marking_Scale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Marking_Scale">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parent_Fe__Paren__403A8C7D">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="Parent_Feedback" Type="Self.Parent_Feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="Parent_Feedback">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Progress___Marki__70DDC3D8">
+    <End Role="Marking_Scale" Type="Self.Marking_Scale" Multiplicity="0..1" />
+    <End Role="Progress_Category" Type="Self.Progress_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marking_Scale">
+        <PropertyRef Name="Marking_Scale_ID" />
+      </Principal>
+      <Dependent Role="Progress_Category">
+        <PropertyRef Name="Marking_Scale_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReportCar__Repor__628FA481">
+    <End Role="ReportCard" Type="Self.ReportCard" Multiplicity="0..1" />
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard">
+        <PropertyRef Name="Report_Card_ID" />
+      </Principal>
+      <Dependent Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ReportCar__Stude__5AEE82B9">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="ReportCard" Type="Self.ReportCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="ReportCard">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Schedule__School__5812160E">
+    <End Role="School" Type="Self.School" Multiplicity="0..1" />
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="School_ID" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="School_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Fe__Paren__123EB7A3">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="School_Fees_Status" Type="Self.School_Fees_Status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="School_Fees_Status">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Te__Repor__5FB337D6">
+    <End Role="ReportCard" Type="Self.ReportCard" Multiplicity="0..1" />
+    <End Role="School_Term" Type="Self.School_Term" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard">
+        <PropertyRef Name="Report_Card_ID" />
+      </Principal>
+      <Dependent Role="School_Term">
+        <PropertyRef Name="Report_Card_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Te__Sched__5DCAEF64">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="School_Term" Type="Self.School_Term" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="Schedule_ID" />
+      </Principal>
+      <Dependent Role="School_Term">
+        <PropertyRef Name="Schedule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__School_Te__Stude__5EBF139D">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="School_Term" Type="Self.School_Term" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="School_Term">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Student__Parent___4316F928">
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parent_Guardian">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Parent_Guardian_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Subcatego__Progr__73BA3083">
+    <End Role="Progress_Category" Type="Self.Progress_Category" Multiplicity="0..1" />
+    <End Role="Subcategory" Type="Self.Subcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Progress_Category">
+        <PropertyRef Name="Progress_Category_ID" />
+      </Principal>
+      <Dependent Role="Subcategory">
+        <PropertyRef Name="Progress_Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier___Emplo__208CD6FA">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Supplier_Order">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier___Schoo__1F98B2C1">
+    <End Role="School" Type="Self.School" Multiplicity="0..1" />
+    <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="School_ID" />
+      </Principal>
+      <Dependent Role="Supplier_Order">
+        <PropertyRef Name="School_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supplier___Suppl__2180FB33">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Supplier_Order" Type="Self.Supplier_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Supplier_Order">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Test__Report_Car__656C112C">
+    <End Role="ReportCard_Template" Type="Self.ReportCard_Template" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportCard_Template">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="Report_Card_Template_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Tbl__User_T__4F7CD00D">
+    <End Role="User_Type" Type="Self.User_Type" Multiplicity="0..1" />
+    <End Role="User_Tbl" Type="Self.User_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type">
+        <PropertyRef Name="User_Type_ID" />
+      </Principal>
+      <Dependent Role="User_Tbl">
+        <PropertyRef Name="User_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Application_Application_Status">
+    <End Role="Application_Status" Type="Self.Application_Status" Multiplicity="0..1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application_Status">
+        <PropertyRef Name="Application_Status_ID" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="Application_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Class_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Class" Type="Self.Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Class">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_User_Tbl">
+    <End Role="User_Tbl" Type="Self.User_Tbl" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Tbl">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parent_Guardian_Application">
+    <End Role="Application" Type="Self.Application" Multiplicity="0..1" />
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Application">
+        <PropertyRef Name="Application_ID" />
+      </Principal>
+      <Dependent Role="Parent_Guardian">
+        <PropertyRef Name="Application_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parent_Guardian_User_Tbl">
+    <End Role="User_Tbl" Type="Self.User_Tbl" Multiplicity="0..1" />
+    <End Role="Parent_Guardian" Type="Self.Parent_Guardian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Tbl">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Parent_Guardian">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_School_Fees_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="School_Fees" Type="Self.School_Fees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="School_Fees">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CrayonKidsModelStoreContainer">
+    <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Allergy" EntityType="Self.Allergy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Application_Status" EntityType="Self.Application_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointment_Booking" EntityType="Self.Appointment_Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Assessment" EntityType="Self.Assessment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Booking_Status" EntityType="Self.Booking_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class_Class_Type" EntityType="Self.Class_Class_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class_Type" EntityType="Self.Class_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class_Type_Employee" EntityType="Self.Class_Type_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Complaint" EntityType="Self.Complaint" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DateTable" EntityType="Self.DateTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emergency" EntityType="Self.Emergency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employment_Status" EntityType="Self.Employment_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipment_Type" EntityType="Self.Equipment_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Homework" EntityType="Self.Homework" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marking_Scale" EntityType="Self.Marking_Scale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu_Item" EntityType="Self.Menu_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu_Item_Menu" EntityType="Self.Menu_Item_Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_Line" EntityType="Self.Order_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parent_Feedback" EntityType="Self.Parent_Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parent_Guardian" EntityType="Self.Parent_Guardian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parent_Guardian_Menu_Item" EntityType="Self.Parent_Guardian_Menu_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Progress_Category" EntityType="Self.Progress_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportCard" EntityType="Self.ReportCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportCard_Template" EntityType="Self.ReportCard_Template" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="School" EntityType="Self.School" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="School_Fees" EntityType="Self.School_Fees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="School_Fees_Status" EntityType="Self.School_Fees_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="School_Term" EntityType="Self.School_Term" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Allergy" EntityType="Self.Student_Allergy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Class" EntityType="Self.Student_Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Emergency" EntityType="Self.Student_Emergency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subcategory" EntityType="Self.Subcategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier_Order" EntityType="Self.Supplier_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timeslot" EntityType="Self.Timeslot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timeslot_Schedule_Date" EntityType="Self.Timeslot_Schedule_Date" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Tbl" EntityType="Self.User_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Type" EntityType="Self.User_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zip_Code" EntityType="Self.Zip_Code" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Appointme__Booki__0F624AF8" Association="Self.FK__Appointme__Booki__0F624AF8">
+      <End Role="Booking_Status" EntitySet="Booking_Status" />
+      <End Role="Appointment_Booking" EntitySet="Appointment_Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Assessmen__Repor__68487DD7" Association="Self.FK__Assessmen__Repor__68487DD7">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Assessment" EntitySet="Assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__Province_I__2CF2ADDF" Association="Self.FK__City__Province_I__2CF2ADDF">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Equipment__Equip__1AD3FDA4" Association="Self.FK__Equipment__Equip__1AD3FDA4">
+      <End Role="Equipment_Type" EntitySet="Equipment_Type" />
+      <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Homework__Report__6B24EA82" Association="Self.FK__Homework__Report__6B24EA82">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Homework" EntitySet="Homework" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Marking_S__Repor__6E01572D" Association="Self.FK__Marking_S__Repor__6E01572D">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Marking_Scale" EntitySet="Marking_Scale" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parent_Fe__Paren__403A8C7D" Association="Self.FK__Parent_Fe__Paren__403A8C7D">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="Parent_Feedback" EntitySet="Parent_Feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Progress___Marki__70DDC3D8" Association="Self.FK__Progress___Marki__70DDC3D8">
+      <End Role="Marking_Scale" EntitySet="Marking_Scale" />
+      <End Role="Progress_Category" EntitySet="Progress_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReportCar__Repor__628FA481" Association="Self.FK__ReportCar__Repor__628FA481">
+      <End Role="ReportCard" EntitySet="ReportCard" />
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ReportCar__Stude__5AEE82B9" Association="Self.FK__ReportCar__Stude__5AEE82B9">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="ReportCard" EntitySet="ReportCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Schedule__School__5812160E" Association="Self.FK__Schedule__School__5812160E">
+      <End Role="School" EntitySet="School" />
+      <End Role="Schedule" EntitySet="Schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Fe__Paren__123EB7A3" Association="Self.FK__School_Fe__Paren__123EB7A3">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="School_Fees_Status" EntitySet="School_Fees_Status" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Te__Repor__5FB337D6" Association="Self.FK__School_Te__Repor__5FB337D6">
+      <End Role="ReportCard" EntitySet="ReportCard" />
+      <End Role="School_Term" EntitySet="School_Term" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Te__Sched__5DCAEF64" Association="Self.FK__School_Te__Sched__5DCAEF64">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="School_Term" EntitySet="School_Term" />
+    </AssociationSet>
+    <AssociationSet Name="FK__School_Te__Stude__5EBF139D" Association="Self.FK__School_Te__Stude__5EBF139D">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="School_Term" EntitySet="School_Term" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Student__Parent___4316F928" Association="Self.FK__Student__Parent___4316F928">
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Subcatego__Progr__73BA3083" Association="Self.FK__Subcatego__Progr__73BA3083">
+      <End Role="Progress_Category" EntitySet="Progress_Category" />
+      <End Role="Subcategory" EntitySet="Subcategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier___Emplo__208CD6FA" Association="Self.FK__Supplier___Emplo__208CD6FA">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier___Schoo__1F98B2C1" Association="Self.FK__Supplier___Schoo__1F98B2C1">
+      <End Role="School" EntitySet="School" />
+      <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supplier___Suppl__2180FB33" Association="Self.FK__Supplier___Suppl__2180FB33">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Supplier_Order" EntitySet="Supplier_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Test__Report_Car__656C112C" Association="Self.FK__Test__Report_Car__656C112C">
+      <End Role="ReportCard_Template" EntitySet="ReportCard_Template" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Tbl__User_T__4F7CD00D" Association="Self.FK__User_Tbl__User_T__4F7CD00D">
+      <End Role="User_Type" EntitySet="User_Type" />
+      <End Role="User_Tbl" EntitySet="User_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Application_Application_Status" Association="Self.FK_Application_Application_Status">
+      <End Role="Application_Status" EntitySet="Application_Status" />
+      <End Role="Application" EntitySet="Application" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Class_Student" Association="Self.FK_Class_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Class" EntitySet="Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_User_Tbl" Association="Self.FK_Employee_User_Tbl">
+      <End Role="User_Tbl" EntitySet="User_Tbl" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parent_Guardian_Application" Association="Self.FK_Parent_Guardian_Application">
+      <End Role="Application" EntitySet="Application" />
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parent_Guardian_User_Tbl" Association="Self.FK_Parent_Guardian_User_Tbl">
+      <End Role="User_Tbl" EntitySet="User_Tbl" />
+      <End Role="Parent_Guardian" EntitySet="Parent_Guardian" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Student" Association="Self.FK_Payment_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_School_Fees_Student" Association="Self.FK_School_Fees_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="School_Fees" EntitySet="School_Fees" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

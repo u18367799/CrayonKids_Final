@@ -1,0 +1,36 @@
+<div class="container"  style="text-align: center;">
+
+
+<div  style="text-align: center;" >
+    <h2 style="color: black;">Upload Proof Of Payment</h2>
+    <div class="form-group"  style="text-align: center;">
+       
+        <input type="file" (change)="file($event.target)" accept="image">
+        <!-- <img width="500px" height="750px" *ngIf="object.url" [src]="object.url" class="image"> <br><br> -->
+        <!-- <pdf-viewer *ngIf="object.url" [src]="object.url" style="display: block;"
+        
+></pdf-viewer> -->
+
+
+    <pdf-viewer
+    *ngIf="object.url" [src]="object.url"
+      [rotation]="0"
+      [original-size]="false"
+      [show-all]="true"
+      [fit-to-page]="false"
+      [zoom]="1"
+      [zoom-scale]="'page-width'"
+      [stick-to-page]="false"
+      [render-text]="true"
+      [external-link-target]="'blank'"
+      [autoresize]="true"
+      [show-borders]="false"
+      style="width: 100%; height: 600px;"
+    ></pdf-viewer>
+
+           
+          
+    </div>
+    <button class="btn btn-block btn-primary" style="color: black; font-size: large;" (click)="onSubmit()">Upload</button>
+</div>
+

@@ -1,0 +1,100 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">book</span> #APP0{{application.Application_ID}}
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form class="form-inline" >
+    <br>
+    <h4><strong>Status: </strong>{{application.Description}}</h4>
+    <h3>Parent Details</h3>
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="name">Name:</label>
+          <br><br>
+          <input matInput type="text" name="Name" readonly value="{{application.Parent_Name}}" > <br>
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <label for="surname">Surname:</label>   
+          <br><br>
+         <input matInput type="text" name="Surname" readonly value="{{application.Parent_Surname}}"> <br>
+        </mat-form-field>
+      </div>
+    </div>    
+  
+
+  
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="email">Email address:</label>
+          <br>
+          <input matInput type="text" name="Email_Address" readonly value="{{application.Parent_Email}}"> <br>
+        </mat-form-field>
+      </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field >  
+          <label for="contactNr">Contact Number:</label>
+          <br>
+          <input  matInput type="text" name="Contact_No" readonly value="{{application.Parent_Contact_No}}"> <br>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <h3>Student Details</h3>
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="name">Name:</label>
+          <br>
+          <input matInput type="text" readonly value="{{application.Student_Name}}"> <br>
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <label for="surname">Surname:</label>   
+          <br>
+         <input matInput type="text" readonly value="{{application.Student_Surname}}"> <br>
+        </mat-form-field>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="grade">Grade :</label>
+          <br>
+          <input type="number" matInput readonly value="{{application.Student_Grade}}"> <br>
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+
+  <br>
+    <div class="addButton">
+    <button class="btn btn-success" (click)="onSubmit();">Accept Application</button>
+    <button  class="btn btn-danger" style="margin-left: 10px;">Reject Application</button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+
+  
+  
+  
+  

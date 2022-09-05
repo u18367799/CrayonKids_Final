@@ -1,0 +1,105 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">book</span> Create Application
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form [formGroup]="applicationForm" class="form-inline" (ngSubmit)="onSubmit()">
+    <br><br>
+    <h3>Parent Details</h3>
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <mat-label for="name">Name:</mat-label>
+          <br>
+          <input matInput type="text" name="Name" [(ngModel)]="applicationData.Parent_Name"  formControlName="Name"> <br>
+          <mat-error *ngIf="applicationForm.get('Name').invalid && applicationForm.get('Name').touched" class="text-danger">Name is required</mat-error>
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <mat-label for="surname">Surname:</mat-label>   
+          <br>
+         <input matInput type="text" name="Surname" [(ngModel)]="applicationData.Parent_Surname"  formControlName="surname"> <br>
+         <mat-error *ngIf="applicationForm.get('surname').invalid && applicationForm.get('surname').touched" class="text-danger">Surname is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>    
+  
+
+  
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <mat-label for="email">Email address:</mat-label>
+          <br>
+          <input matInput type="text" name="Email_Address" [(ngModel)]="applicationData.Parent_Email" formControlName="email"> <br>
+          <mat-error *ngIf="applicationForm.get('email').invalid && applicationForm.get('email').touched" class="text-danger">Enter a valid Email</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field >  
+          <mat-label for="contactNr">Contact Number:</mat-label>
+          <br>
+          <input  matInput type="text" name="Contact_No" [(ngModel)]="applicationData.Parent_Contact_No"  formControlName="contactNr"> <br>
+          <mat-error *ngIf="applicationForm.get('contactNr').invalid && applicationForm.get('contactNr').touched" class="text-danger">Contact No is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <h3>Student Details</h3>
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <mat-label for="name">Name:</mat-label>
+          <br>
+          <input matInput type="text" [(ngModel)]="applicationData.Student_Name" formControlName="SName"> <br>
+          <mat-error *ngIf="applicationForm.get('Name').invalid && applicationForm.get('Name').touched" class="text-danger">Name is required (max 50 characters)</mat-error>
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <mat-label for="surname">Surname:</mat-label>   
+          <br>
+         <input matInput type="text" [(ngModel)]="applicationData.Student_Surname" formControlName="Ssurname"> <br>
+         <mat-error *ngIf="applicationForm.get('surname').invalid && applicationForm.get('surname').touched" class="text-danger">Surname is required (max 50 characters)</mat-error>
+        </mat-form-field>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <mat-label for="grade">Grade :</mat-label>
+          <br>
+          <input type="number" matInput [(ngModel)]="applicationData.Student_Grade" formControlName="grade"> <br>
+          <mat-error *ngIf="applicationForm.get('grade').invalid && applicationForm.get('grade').touched" class="text-danger">Student Grade is required (min 0, max 100)</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  
+  
+
+  <br>
+    <div class="addButton">
+    <button type="submit" [disabled]="!applicationForm.valid" class="btn btn-success" >Create Application</button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+
+  
+  
+  
+  

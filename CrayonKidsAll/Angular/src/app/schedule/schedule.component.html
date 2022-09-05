@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 style="color: rgb(27, 31, 88);">Schedule</h1>
+    <hr />
+    
+    <div class="input-group rounded">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" (keyup)="search($event)"  />
+    </div>
+    
+    <br><br>
+
+    <table mat-table [dataSource]="dataSource" matSort class="table table-hover mat-elevation-z8" style="color: black;">
+
+        <ng-container matColumnDef="Schedule_ID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Schedule_ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.Schedule_ID}} </td>
+        </ng-container>
+        <ng-container matColumnDef="School_Name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> School Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.School_Name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Event_Date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Event Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.Event_Date}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> Update </th>
+            <td mat-cell *matCellDef="let element">
+                <button type="button" class="btn btn-sm btn-info" (click)="editSchedule(element.Schedule_ID, element)"> Update
+                </button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element">
+                <button type="button" class="btn btn-sm btn-danger" (click)="getID(element.Schedule_ID)">Delete
+                    
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+      
+        <td></td>
+        
+      <div class="container text-center">
+        <button type="submit" class="btn btn-default" a routerLink="/addstudentdetails">Add Schedule</button>
+      </div>
+    </div>

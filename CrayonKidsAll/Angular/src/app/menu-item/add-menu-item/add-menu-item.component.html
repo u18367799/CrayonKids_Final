@@ -1,0 +1,60 @@
+<main class="main">
+
+    <mat-card>
+      <header>
+        <mat-card-title>
+          <span class="material-icons">person</span> Add Menu Item
+        </mat-card-title>
+      </header>
+    
+  <mat-card-content>
+  <form [formGroup]="menu_itemForm" class="form-inline" (ngSubmit)="onSubmit()">
+    <br><br>
+    
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field>  
+          <label for="menu_item_Description">Menu Item Description:</label>
+          <br>
+          <input type="text" name="Menu_Item_Description" [(ngModel)]="menu_itemData.Menu_Item_Description" class="form-control" formControlName="description"> <br>
+          <!-- <small *ngIf="menu_itemForm.get('Menu_Item_Description').invalid && menu_itemForm.get('Menu_Item_Description').touched" class="text-danger">Menu_Item_Description is required</small> -->
+  
+        </mat-form-field> 
+       </div>
+  
+      <div class="col-lg-6">
+        <mat-form-field>  
+         <label for="menu_items_Purchased">Menu Items Purchased:</label>   
+          <br>
+         <input type="text" name="Menu_Items_Purchased" [(ngModel)]="menu_itemData.Menu_Items_Purchased" class="form-control" formControlName="purchased"> <br>
+         <!-- <small *ngIf="menu_itemForm.get('menu_items_Purchased').invalid && menu_itemForm.get('menu_items_Purchased').touched" class="text-danger">Menu_Items_Purchased is required</small> -->
+        </mat-form-field>
+      </div>
+    </div>    
+  
+
+  
+    <!-- <div class="row">  
+      <div class="col-lg-6">
+        <mat-form-field>
+        <label for="menu_item_Purchase_Date">Menu_Item_Purchase_Date:</label>
+        <br>
+        <input type="date" name="Menu_Item_Purchase_Date" [(ngModel)]="menu_itemData.Menu_Item_Purchase_Date" class="form-control" formControlName="menu_item_Purchase_Date"> <br>
+        <small *ngIf="menu_itemForm.get('menu_item_Purchase_Date').invalid && menu_itemForm.get('menu_item_Purchase_Date').touched" class="text-danger">menu_item_Purchase_Date is required</small>
+      </mat-form-field>
+    </div>
+  </div> -->
+
+  <br>
+    <div class="addButton">
+    <button type="submit" [disabled]="!menu_itemForm.valid" class="btn btn-success" >Add Menu Item</button>
+    </div>
+  
+    </form>
+  </mat-card-content>
+  </mat-card>
+  </main>
+
+  
+
+  
